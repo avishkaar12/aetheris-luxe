@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "primary-fixed": "#ffdad6",
+                    "on-surface-variant": "#dbc1be",
+                    "on-error": "#690005",
+                    "surface-bright": "#37393a",
+                    "secondary-fixed": "#ffdea6",
+                    "secondary-container": "#755400",
+                    "on-primary-fixed-variant": "#7b2d28",
+                    "surface": "#121414",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#554240",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#d26f67",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "on-tertiary-container": "#8d8c8b",
+                    "surface-container-low": "#1a1c1c",
+                    "background": "#121414",
+                    "secondary": "#eec068",
+                    "on-background": "#e2e2e2",
+                    "surface-container-high": "#282a2b",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "primary-container": "#4d0a0a",
+                    "surface-tint": "#ffb3ac",
+                    "surface-container-highest": "#333535",
+                    "surface-container": "#1e2020",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "on-secondary-fixed": "#271900",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#400204",
+                    "secondary-fixed-dim": "#eec068",
+                    "surface-dim": "#121414",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "tertiary-container": "#252525",
+                    "outline": "#a38b89",
+                    "on-tertiary": "#313030",
+                    "on-secondary": "#412d00",
+                    "inverse-surface": "#e2e2e2",
+                    "surface-container-lowest": "#0c0f0f",
+                    "inverse-primary": "#9a443e",
+                    "tertiary": "#c8c6c5",
+                    "on-secondary-container": "#f9ca71",
+                    "on-primary": "#5d1714",
+                    "primary": "#ffb3ac",
+                    "on-surface": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-gap": "160px",
+                    "margin-page": "80px",
+                    "container-max": "1440px",
+                    "glass-padding": "40px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Noto Serif"],
+                    "title-lg": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "display-xl": ["Noto Serif"],
+                    "label-caps": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-lg": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .deep-glass {
+            backdrop-filter: blur(40px);
+            background: rgba(18, 20, 20, 0.6);
+            border: 1px solid rgba(238, 192, 104, 0.2);
+            box-shadow: inset 0 0 20px rgba(238, 192, 104, 0.05);
+        }
+        .mist-layer {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(238, 192, 104, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- Atmospheric Background Mists -->
+<div class="mist-layer bg-primary-container top-[-10%] left-[-10%]"></div>
+<div class="mist-layer bg-secondary top-[40%] right-[-15%]"></div>
+<div class="mist-layer bg-primary-container bottom-[-10%] left-[20%]"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-950/80 backdrop-blur-xl border-b border-amber-200/20 shadow-2xl flex justify-between items-center px-12 h-20 transition-all duration-500">
+<div class="text-2xl font-bold tracking-[0.2em] text-amber-200 cursor-pointer active:scale-95">AETHERIA</div>
+<div class="hidden md:flex gap-12">
+<a class="font-serif tracking-widest uppercase text-sm text-amber-200 border-b border-amber-200 pb-1 cursor-pointer" href="#">Heritage</a>
+<a class="font-serif tracking-widest uppercase text-sm text-stone-400 hover:text-amber-100 transition-colors cursor-pointer" href="#">Collection</a>
+<a class="font-serif tracking-widest uppercase text-sm text-stone-400 hover:text-amber-100 transition-colors cursor-pointer" href="#">Process</a>
+<a class="font-serif tracking-widest uppercase text-sm text-stone-400 hover:text-amber-100 transition-colors cursor-pointer" href="#">Philosophy</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-amber-200 cursor-pointer active:scale-95" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</nav>
+<main class="relative z-10 pt-20">
+<!-- Section 1: The Genesis (1894) -->
+<section class="min-h-screen flex items-center justify-center relative px-8 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="A vintage, dimly lit study from the late 19th century, filled with apothecary jars and dried botanical specimens. The atmosphere is thick with shadows of Royal Maroon and Obsidian, illuminated only by a single glowing candle on a mahogany desk. Julian Aetheris, an enigmatic figure in a dark frock coat, is shown from the side, meticulously distilling a rare flower under the silver light of a full moon shining through a high arched window. The visual style is cinematic, dark, and highly prestigious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPYOr3AVPH1I1cBHl7LuKqBnaSnQOIYvUaOHrbWokXkkyeITi1G5WAvm10QkMLL6A86GposCMPljFo6XZxR9xQDEdlzYkGrYzEu8pot4ujodDf2mZW4DNUogZGeVjqjuIHC4bcow4_pHJZaKYTjIbqOlXpYv2bPNdcjeeYRFqaHpTwwqL0m4oVeBEIinYpzzO3aeUIxnFEbeVH_NlQV2AuFEIsWaHIsOkVVoKtVdGdcUHhEqYCKZzBeXOCgzt_iJ9qFEoWo2RhZ8g"/>
+<div class="absolute inset-0 bg-gradient-to-b from-stone-950 via-transparent to-stone-950"></div>
+</div>
+<div class="max-w-container-max mx-auto relative z-10 text-center flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-secondary mb-6 block tracking-[0.3em]">ESTABLISHED 1894</span>
+<h1 class="font-display-xl text-display-xl text-on-background mb-8 leading-tight">The Genesis of <br/><span class="italic text-secondary">Nocturnal Bloom</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-12">
+                    In the heart of the Auvergne mountains, Julian Aetheris sought a scent that only existed in the silence of midnight. The first essence was captured not in daylight, but under the indigo veil of a celestial alignment.
+                </p>
+<div class="w-px h-32 bg-gradient-to-b from-secondary to-transparent"></div>
+</div>
+</section>
+<!-- Section 2: The Artisan's Atelier -->
+<section class="py-section-gap px-margin-page bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-gutter items-center mb-24">
+<div class="col-span-12 md:col-span-5">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">CRAFTSMANSHIP</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-8">The Artisan's Atelier</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Every drop of Aetheria is a testament to patience. We reject the industrial haste of modern perfumery, choosing instead the rhythmic pace of traditional maceration and secret cold-extraction techniques.
+                        </p>
+</div>
+<div class="col-span-1 md:col-span-1"></div>
+<div class="col-span-12 md:col-span-6 grid grid-cols-2 gap-6">
+<div class="deep-glass p-glass-padding rounded-lg flex flex-col justify-end min-h-[350px]">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="experiment">experiment</span>
+<h3 class="font-title-lg text-title-lg text-on-background mb-2">Rare Extractions</h3>
+<p class="font-label-caps text-[10px] text-on-surface-variant">SCIENTIFIC PURITY</p>
+</div>
+<div class="deep-glass p-glass-padding rounded-lg flex flex-col justify-end min-h-[350px] mt-12">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="hourglass_empty">hourglass_empty</span>
+<h3 class="font-title-lg text-title-lg text-on-background mb-2">24-Hour Maceration</h3>
+<p class="font-label-caps text-[10px] text-on-surface-variant">CHRONO-ARTISTRY</p>
+</div>
+</div>
+</div>
+<!-- Featured Image Bento Item -->
+<div class="w-full aspect-[21/9] rounded-lg overflow-hidden relative deep-glass border-0">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-definition shot of a deep glass beaker containing a rich, dark liquid with amber reflections, symbolizing the maceration process of a high-end perfume. Fine botanical particles are suspended in the fluid, catching the light from a nearby Champagne Gold lamp. The background is a blurred laboratory setting with a deep Obsidian and Royal Maroon color palette. The lighting is soft and luxurious, emphasizing the viscous, precious nature of the elixir." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAPTv9WkgFbcQhNHQnLQmGtKb6u4wwOvFrLmLxj4QPWC8VWnO0rOaun4boLBxVaBU4I8TwV3xVGMk2gWSyzOQCWzR5Qp34V7oe1mYqSStd6xwCemj7cPx896iny4G_NksFKo0nwfNogNhHpbYUtUZlh6pkAbDJv2hcRUBeKP8tnvpIzhKp-FyLOC5h0bb-gN4qv909Lw8jPwbgnxOwglZ4ZJsvzlxBbZCyDKMZ-jopTzqbl01nAEgHm_GZgMfYqfn1HZwTIF2L0bQ"/>
+<div class="absolute inset-0 bg-stone-950/20 backdrop-blur-[2px]"></div>
+<div class="absolute bottom-12 left-12 max-w-lg">
+<p class="font-title-lg text-on-background italic">"We do not create scents; we preserve the memories of the night."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: The Master Perfumer's Philosophy -->
+<section class="py-section-gap bg-primary-container relative">
+<div class="absolute inset-0 bg-stone-950/60 backdrop-blur-sm"></div>
+<div class="max-w-container-max mx-auto px-margin-page relative z-10 text-center">
+<span class="material-symbols-outlined text-secondary text-6xl mb-12 block mx-auto opacity-50" data-icon="format_quote">format_quote</span>
+<blockquote class="font-headline-lg text-headline-lg text-on-primary-fixed mb-12 leading-tight italic">
+                    Traditional alchemy is the foundation, <br/>but elegance is the architecture.
+                </blockquote>
+<div class="w-16 h-px bg-secondary mx-auto mb-8"></div>
+<cite class="font-label-caps text-label-caps text-secondary block uppercase tracking-[0.4em]">The Master Perfumer's Philosophy</cite>
+</div>
+</section>
+<!-- Section 4: Interactive Timeline -->
+<section class="py-section-gap px-margin-page bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col items-center mb-24">
+<span class="font-label-caps text-label-caps text-secondary mb-4">CHRONOLOGY</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Legacy of Distinction</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Timeline Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-px bg-secondary/20"></div>
+<!-- Milestone 1 -->
+<div class="relative pt-24 group">
+<div class="absolute top-11 left-0 w-3 h-3 bg-secondary rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+<h4 class="font-title-lg text-secondary mb-4">1894</h4>
+<h5 class="font-label-caps text-on-background mb-4">THE FOUNDING</h5>
+<p class="font-body-md text-on-surface-variant text-sm">Julian Aetheris opens the first boutique in the Palais-Royal, Paris.</p>
+</div>
+<!-- Milestone 2 -->
+<div class="relative pt-24 group">
+<div class="absolute top-11 left-0 w-3 h-3 bg-secondary rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+<h4 class="font-title-lg text-secondary mb-4">1922</h4>
+<h5 class="font-label-caps text-on-background mb-4">THE GOLDEN AGE</h5>
+<p class="font-body-md text-on-surface-variant text-sm">The house becomes the official perfumer for the Royal Court of Belgium.</p>
+</div>
+<!-- Milestone 3 -->
+<div class="relative pt-24 group">
+<div class="absolute top-11 left-0 w-3 h-3 bg-secondary rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+<h4 class="font-title-lg text-secondary mb-4">1978</h4>
+<h5 class="font-label-caps text-on-background mb-4">ARCHIVE REVIVAL</h5>
+<p class="font-body-md text-on-surface-variant text-sm">Rediscovery of the 19th-century distillation formulas in a hidden vault.</p>
+</div>
+<!-- Milestone 4 -->
+<div class="relative pt-24 group">
+<div class="absolute top-11 left-0 w-3 h-3 bg-secondary rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+<h4 class="font-title-lg text-secondary mb-4">PRESENT</h4>
+<h5 class="font-label-caps text-on-background mb-4">AETHERIA LUXE</h5>
+<p class="font-body-md text-on-surface-variant text-sm">Continuing the pursuit of nocturnal elegance for the modern connoisseur.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap text-center px-margin-page">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-on-background mb-8">Begin Your Journey</h2>
+<button class="px-12 py-4 bg-primary-container border border-secondary text-secondary font-label-caps hover:bg-secondary hover:text-primary-container transition-all duration-500 uppercase tracking-widest">
+                    Explore The Collection
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-950 w-full py-20 border-t border-amber-200/10 flex flex-col items-center gap-8 px-8">
+<div class="text-lg font-bold text-amber-200 tracking-[0.2em]">AETHERIA</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-serif text-xs tracking-widest uppercase text-stone-500 hover:text-red-900 transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-serif text-xs tracking-widest uppercase text-stone-500 hover:text-red-900 transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-serif text-xs tracking-widest uppercase text-stone-500 hover:text-red-900 transition-colors duration-300" href="#">Boutique Locator</a>
+<a class="font-serif text-xs tracking-widest uppercase text-stone-500 hover:text-red-900 transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="font-serif text-xs tracking-widest uppercase text-amber-200 mt-4 opacity-50">
+            © 2024 AETHERIA PARFUMS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

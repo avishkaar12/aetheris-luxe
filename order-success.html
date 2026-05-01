@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed - Aetheris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">Aetheris</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="product-detail.html">Signature</a>
+        <a href="bespoke.html">Bespoke</a>
+        <a href="profiles.html">Alchemy</a>
+      </nav>
+      <div class="header-tools">
+        <a class="icon-btn" href="login.html" aria-label="Login">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+        <a class="icon-btn" href="cart.html" aria-label="Cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-dot" data-cart-count style="display:none">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap section">
+    <section class="panel reveal" style="padding:1.3rem; text-align:center; max-width:860px; margin:0 auto;">
+      <p class="kicker">Order Confirmed</p>
+      <h1>Your Scent Is Being Prepared</h1>
+      <p class="lead">Thank you for choosing Aetheris. Our atelier has started crafting your order with hand-finished detailing.</p>
+
+      <article class="form-panel" style="margin:1.2rem auto; max-width:520px; text-align:left;">
+        <div class="row"><span class="muted">Order Number</span><strong data-order-id>ATH-2026-0482</strong></div>
+        <div class="row"><span class="muted">Status</span><strong style="color:var(--success)">Blending In Progress</strong></div>
+        <div class="row"><span class="muted">Estimated Dispatch</span><strong data-order-dispatch>Within 2 business days</strong></div>
+        <div class="row"><span class="muted">Order Total</span><strong class="price" data-order-total>$0.00</strong></div>
+        <div class="row"><span class="muted">Items</span><strong data-order-items>0</strong></div>
+      </article>
+
+      <div class="button-row" style="justify-content:center; margin-top:1rem;">
+        <a class="btn btn-primary" href="collections.html">Continue Shopping</a>
+        <a class="btn btn-secondary" href="profiles.html">View Profile</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="row"><span>A confirmation has been sent to your email.</span><a href="index.html">Return Home</a></div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="site-fixes.js"></script>
+</body>
+</html>

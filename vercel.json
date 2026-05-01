@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/collections", "destination": "/collections.html" },
+    { "source": "/profiles", "destination": "/profiles.html" },
+    { "source": "/bespoke", "destination": "/bespoke.html" },
+    { "source": "/product-detail", "destination": "/product-detail.html" },
+    { "source": "/cart", "destination": "/cart.html" },
+    { "source": "/checkout", "destination": "/checkout.html" },
+    { "source": "/order-success", "destination": "/order-success.html" },
+    { "source": "/login", "destination": "/login.html" }
+  ]
+}

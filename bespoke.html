@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bespoke Atelier - Aetheris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">Aetheris</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="product-detail.html">Signature</a>
+        <a class="active" href="bespoke.html">Bespoke</a>
+        <a href="profiles.html">Alchemy</a>
+      </nav>
+      <div class="header-tools">
+        <a class="icon-btn" href="login.html"><span class="material-symbols-outlined">person</span></a>
+        <a class="icon-btn" href="cart.html"><span class="material-symbols-outlined">shopping_bag</span><span class="cart-dot" data-cart-count style="display:none">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap section">
+    <section class="split reveal">
+      <article class="panel" style="padding:1.2rem">
+        <p class="kicker">Bespoke Atelier</p>
+        <h1>Create Your Signature</h1>
+        <p class="lead">Select any three notes. Our perfumer blends a couture formula and bottles it under your name.</p>
+
+        <h3 style="margin:0.6rem 0">Top Notes</h3>
+        <div class="note-grid">
+          <button class="note-btn" data-note="Bergamot">Bergamot</button>
+          <button class="note-btn" data-note="Neroli">Neroli</button>
+          <button class="note-btn" data-note="Pink Pepper">Pink Pepper</button>
+          <button class="note-btn" data-note="Saffron">Saffron</button>
+        </div>
+
+        <h3 style="margin:0.6rem 0">Heart Notes</h3>
+        <div class="note-grid">
+          <button class="note-btn" data-note="Damask Rose">Damask Rose</button>
+          <button class="note-btn" data-note="Jasmine">Jasmine</button>
+          <button class="note-btn" data-note="Iris">Iris</button>
+          <button class="note-btn" data-note="Violet Leaf">Violet Leaf</button>
+        </div>
+
+        <h3 style="margin:0.6rem 0">Base Notes</h3>
+        <div class="note-grid">
+          <button class="note-btn" data-note="Aged Oud">Aged Oud</button>
+          <button class="note-btn" data-note="Sandalwood">Sandalwood</button>
+          <button class="note-btn" data-note="Amber Resin">Amber Resin</button>
+          <button class="note-btn" data-note="Tonka Bean">Tonka Bean</button>
+        </div>
+
+        <div class="row" style="align-items:center; margin-top:1rem">
+          <span class="price" style="font-size:1.2rem">$480 Bespoke Formula</span>
+          <button class="btn btn-primary" data-finalize-bespoke>Create Blend</button>
+        </div>
+      </article>
+
+      <article class="panel bespoke-image" style="padding:1rem">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe5EGZomve5JKFeSvojNtcdSCmowLPWsXg9E1MHksq5ygvofMi9zKMXIeJNZ8me1LV2mdfdVViwYROLUmk54gkrhoUYJIyXXajqXE2zlXAkrogq8w_ziZHJbgECgYcRSFbKzIaQyMVnb_Og2t4robTzqfN5LmGnSYTrI4th61aq5dzkUYvWe_B5aH-m_vTVGVNkV_O1a4Rx8_w6fz1FXEx7rIqCe4va_4bMj54JWHOoM-RYe5DLW2sjmkBOy0bhZaQXtoZyt4-cXk" alt="Bespoke perfume atelier bottle" />
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="row"><span>Bespoke timeline: 14 to 21 days</span><a href="cart.html">View Cart</a></div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="site-fixes.js"></script>
+</body>
+</html>

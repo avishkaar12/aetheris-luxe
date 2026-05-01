@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aetheris Collections</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">Aetheris</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="collections.html">Collections</a>
+        <a href="product-detail.html">Signature</a>
+        <a href="bespoke.html">Bespoke</a>
+        <a href="profiles.html">Alchemy</a>
+      </nav>
+      <div class="header-tools">
+        <a class="icon-btn" href="login.html"><span class="material-symbols-outlined">person</span></a>
+        <a class="icon-btn" href="cart.html"><span class="material-symbols-outlined">shopping_bag</span><span class="cart-dot" data-cart-count style="display:none">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section reveal">
+      <p class="kicker">The Fragrance Vault</p>
+      <h1>Discover Every Mood</h1>
+      <p class="lead">From luminous citrus to velvety oud, each collection is designed for a distinct emotional signature.</p>
+      <div class="filter-row" data-collection-filters>
+        <button type="button" class="filter-chip active" data-filter="all">All</button>
+        <button type="button" class="filter-chip" data-filter="woody">Woody</button>
+        <button type="button" class="filter-chip" data-filter="floral">Floral</button>
+        <button type="button" class="filter-chip" data-filter="amber">Amber</button>
+        <button type="button" class="filter-chip" data-filter="night">Evening</button>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="grid cols-3" data-collection-grid>
+        <article class="card" data-family="amber night">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvc9lOApS29BJGa9GIFx3f9N92xR7CEouiJLGMT3OPnojaHr3CYekPdGFgfxLyqyhtox_rbDGmwbea7T66r5R-x5vIQduK0elZtT_N8kYTN7Uys-h9-M3_d8CaGxOU27eryCW8qoxUVXNUlDh2HoB3ZDANTGPdntv4xUQhXrbwefq0ryK-RrfYVWU751CpZ67ar_2hVpR0nz8zNahdW_GLVtIZY2j2RXIiNx--MQ87eYlJLEh7oVCXFM425Ww7650-79gS1kBEcBU" alt="Midnight Obsidian bottle" />
+          <div class="card-body">
+            <h3>Midnight Obsidian</h3>
+            <p class="muted">Dark amber, incense, black tea</p>
+            <div class="row"><span class="price">$390</span><button class="btn btn-secondary" data-add-to-cart data-id="midnight_obsidian" data-name="Midnight Obsidian" data-price="390" data-size="100ML" data-type="Extrait" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAvc9lOApS29BJGa9GIFx3f9N92xR7CEouiJLGMT3OPnojaHr3CYekPdGFgfxLyqyhtox_rbDGmwbea7T66r5R-x5vIQduK0elZtT_N8kYTN7Uys-h9-M3_d8CaGxOU27eryCW8qoxUVXNUlDh2HoB3ZDANTGPdntv4xUQhXrbwefq0ryK-RrfYVWU751CpZ67ar_2hVpR0nz8zNahdW_GLVtIZY2j2RXIiNx--MQ87eYlJLEh7oVCXFM425Ww7650-79gS1kBEcBU">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="floral">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQqSAJgeKL2pNwjZUqxzRXMI6v9AgUxraiGK1-njNCvg2eCh3b04WUMlCvIpvFrwjz6ATe5P7CFpIxoegGEjCG7VvZolLtZtrrV_mjLb_3LoCTowBZP0YykWfx-pf2fP_wdaajXSeLL4GPY2G26LrEWmHkave64ddwMfx4kgAw5WOfH-03DOLhbhbl-GCrfcgzXn-EEp4zoRxb-ckJw4EEtDwjgo2E1DSLdpZLCkAyB3KNREaj9YuxL3ibHtsz14tgTdb-zsxmcwI" alt="Solar Neroli bottle" />
+          <div class="card-body">
+            <h3>Solar Neroli</h3>
+            <p class="muted">Neroli blossom, bergamot, white musk</p>
+            <div class="row"><span class="price">$280</span><button class="btn btn-secondary" data-add-to-cart data-id="solar_neroli" data-name="Solar Neroli" data-price="280" data-size="75ML" data-type="Eau de Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAQqSAJgeKL2pNwjZUqxzRXMI6v9AgUxraiGK1-njNCvg2eCh3b04WUMlCvIpvFrwjz6ATe5P7CFpIxoegGEjCG7VvZolLtZtrrV_mjLb_3LoCTowBZP0YykWfx-pf2fP_wdaajXSeLL4GPY2G26LrEWmHkave64ddwMfx4kgAw5WOfH-03DOLhbhbl-GCrfcgzXn-EEp4zoRxb-ckJw4EEtDwjgo2E1DSLdpZLCkAyB3KNREaj9YuxL3ibHtsz14tgTdb-zsxmcwI">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="floral woody">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4uzgYaAvF7tFUfaM_IlxzmhGC_HvCtFCCeNfiDyyCUvqiAcc3yNvAkQz57YzvcFFUKxLxU2NreSXGMFlDjPlHQXYRCzIRJox4RC5OapUeBbQ-4MGHCr0aV6UcJaGuzLee9h--LBtwS_98GxxrdXNvyVUixLDIOALzwn03Pcy2F1bZW2n4X2RAnMHUN5YaACyZrufzQxYMsR0oCIfVlmr7YsWynrOsqxVlnUd9R1uM4sdNpjuvi1Fsa6epoVS_0PC2aml6XPc5uG4" alt="Rose Eclipse bottle" />
+          <div class="card-body">
+            <h3>Rose Eclipse</h3>
+            <p class="muted">Damask rose, violet leaf, suede</p>
+            <div class="row"><span class="price">$340</span><button class="btn btn-secondary" data-add-to-cart data-id="rose_eclipse" data-name="Rose Eclipse" data-price="340" data-size="100ML" data-type="Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuB4uzgYaAvF7tFUfaM_IlxzmhGC_HvCtFCCeNfiDyyCUvqiAcc3yNvAkQz57YzvcFFUKxLxU2NreSXGMFlDjPlHQXYRCzIRJox4RC5OapUeBbQ-4MGHCr0aV6UcJaGuzLee9h--LBtwS_98GxxrdXNvyVUixLDIOALzwn03Pcy2F1bZW2n4X2RAnMHUN5YaACyZrufzQxYMsR0oCIfVlmr7YsWynrOsqxVlnUd9R1uM4sdNpjuvi1Fsa6epoVS_0PC2aml6XPc5uG4">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="woody">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi55XvpOqCC3b3qCwVaFzx0zFrueF7SFKDacznuWPQyuWX4yhViFrT7CPRwiX0BW8MWdxJf2y9qn_SkkhbfEznRQPbrtzQv5GtYj5y6I3BWWmQBirTaVu_XqCWzKgPFqB4YRc0LH8mar0WJc9dDfIQySA6LAvYtIdHzjhozVbxZ4wvH98R2lASblyVTsMIzukK13KCDmuDMpYglqZ8uXXQ5Cpxs5qj-kSU7gUt9DBcCS1w8PWUietxFJC1wLuQHaglbxVYnN14-Yw" alt="Ivory Vetiver bottle" />
+          <div class="card-body">
+            <h3>Ivory Vetiver</h3>
+            <p class="muted">Vetiver, cardamom, cashmere woods</p>
+            <div class="row"><span class="price">$320</span><button class="btn btn-secondary" data-add-to-cart data-id="ivory_vetiver" data-name="Ivory Vetiver" data-price="320" data-size="100ML" data-type="Extrait" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDi55XvpOqCC3b3qCwVaFzx0zFrueF7SFKDacznuWPQyuWX4yhViFrT7CPRwiX0BW8MWdxJf2y9qn_SkkhbfEznRQPbrtzQv5GtYj5y6I3BWWmQBirTaVu_XqCWzKgPFqB4YRc0LH8mar0WJc9dDfIQySA6LAvYtIdHzjhozVbxZ4wvH98R2lASblyVTsMIzukK13KCDmuDMpYglqZ8uXXQ5Cpxs5qj-kSU7gUt9DBcCS1w8PWUietxFJC1wLuQHaglbxVYnN14-Yw">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="floral amber">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6BzAAHSqkra--lTgw0xJYyVBnxIXHhGs8qt8QAsxvVltQq9BTJA1Hxcd3jBxxKEulp7PFiH24aiPQyCgPV2TSq98PVv3YXyErpM6Kf6iZ2eFL4VyruZafhSCpe1Sgv1hjs_1k-l1gMV_v-J4WOndBJQ2BHaklR3sRxzu1Fm2T_tS6Gi2hXzkFxfqPAvZFP25x77Tq2eD0Qvc9OqfYarFue7yvPp3L6ZniUM-nh9zK5Ic44VDEdZ7RGxfvEUNC-lxjkxH354d3SlY" alt="Saffron Halo bottle" />
+          <div class="card-body">
+            <h3>Saffron Halo</h3>
+            <p class="muted">Saffron, osmanthus, labdanum</p>
+            <div class="row"><span class="price">$365</span><button class="btn btn-secondary" data-add-to-cart data-id="saffron_halo" data-name="Saffron Halo" data-price="365" data-size="75ML" data-type="Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuD6BzAAHSqkra--lTgw0xJYyVBnxIXHhGs8qt8QAsxvVltQq9BTJA1Hxcd3jBxxKEulp7PFiH24aiPQyCgPV2TSq98PVv3YXyErpM6Kf6iZ2eFL4VyruZafhSCpe1Sgv1hjs_1k-l1gMV_v-J4WOndBJQ2BHaklR3sRxzu1Fm2T_tS6Gi2hXzkFxfqPAvZFP25x77Tq2eD0Qvc9OqfYarFue7yvPp3L6ZniUM-nh9zK5Ic44VDEdZ7RGxfvEUNC-lxjkxH354d3SlY">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="woody night">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCApWDWtX4TKbifPxWZPJHgqHWOo8HtOnd9hYC8jSy_tqJpIh8e8UAwiYui9rqwiWXWEcabCvnbrkhb0IbHoTAW4QRI_5IcT_OI1bEzuFJ4rKxuliNCJrHPavzVAzlSNSPNKlVqrR5eHbQ4YbM49U2BdGLdJnADVPVi1ucUDSmXbwMlu_i3iFMul8ZiUYUV3G1poT1GAtbPlC4E9wH2PbKnHTvaucjfUv5OFuH3b50CyPqGU9-KzQBLiLOKrvAvtETaWiUZzmgqtFA" alt="Cedar Nocturne bottle" />
+          <div class="card-body">
+            <h3>Cedar Nocturne</h3>
+            <p class="muted">Cedar heart, tonka bean, smoked vanilla</p>
+            <div class="row"><span class="price">$295</span><button class="btn btn-secondary" data-add-to-cart data-id="cedar_nocturne" data-name="Cedar Nocturne" data-price="295" data-size="75ML" data-type="Eau de Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCApWDWtX4TKbifPxWZPJHgqHWOo8HtOnd9hYC8jSy_tqJpIh8e8UAwiYui9rqwiWXWEcabCvnbrkhb0IbHoTAW4QRI_5IcT_OI1bEzuFJ4rKxuliNCJrHPavzVAzlSNSPNKlVqrR5eHbQ4YbM49U2BdGLdJnADVPVi1ucUDSmXbwMlu_i3iFMul8ZiUYUV3G1poT1GAtbPlC4E9wH2PbKnHTvaucjfUv5OFuH3b50CyPqGU9-KzQBLiLOKrvAvtETaWiUZzmgqtFA">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="amber night">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkalepKPkWfjyIBVT9j-_qxE5WDNqhMyFl_rwQhFuLowUh0qGmshbZERILDgmWzLGDiKkjXvM9M5a3-6LV_rYrGXEXaJlBQKxQOXMGjOg86SWfFYxlqbWwIXNObT5NWreDD8KHpVPck0cBI_AF14Niy0CyQOBvJeOeUXk9rna-2vZPbc7E4eTUAudVavFX_s8OGHLRWZxp1huwbR0RoLXupyMJzgKSiz6qK2ojz5afPaOWXS9TTZ8VNK4qF3cA0i-pGN-TPAbxN-c" alt="Aurum Veil bottle" />
+          <div class="card-body">
+            <h3>Aurum Veil</h3>
+            <p class="muted">Golden amber, myrrh smoke, suede</p>
+            <div class="row"><span class="price">$435</span><button class="btn btn-secondary" data-add-to-cart data-id="aurum_veil" data-name="Aurum Veil" data-price="435" data-size="100ML" data-type="Extrait" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBkalepKPkWfjyIBVT9j-_qxE5WDNqhMyFl_rwQhFuLowUh0qGmshbZERILDgmWzLGDiKkjXvM9M5a3-6LV_rYrGXEXaJlBQKxQOXMGjOg86SWfFYxlqbWwIXNObT5NWreDD8KHpVPck0cBI_AF14Niy0CyQOBvJeOeUXk9rna-2vZPbc7E4eTUAudVavFX_s8OGHLRWZxp1huwbR0RoLXupyMJzgKSiz6qK2ojz5afPaOWXS9TTZ8VNK4qF3cA0i-pGN-TPAbxN-c">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="floral">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9AYGwXpML2Tv5wxgAXXekppATpni1q2__io9F7K3126jenlyMnWJ-vfjjw3JLw43_4A_cb86eLN3FoRhXFuhdZnch7z-aArfncMKEwmX7kIHLskVIy0I1Kds47SqqKj3YvT-cAIu4zN82JU_HyoYT_2FvIwDvyerqq_5Rv0_s5epv3kl6XMLD33UHQdikKpn_gD3MZYrhJXnP_ZXa5wlIH2cPDI_vi9xRB8k2Yyx2M_4G5mmlcjWs2ZhoUGW9EgTvo6qpQojgEj8" alt="Lune Blanche bottle" />
+          <div class="card-body">
+            <h3>Lune Blanche</h3>
+            <p class="muted">White iris, cashmere musk, moonflower</p>
+            <div class="row"><span class="price">$365</span><button class="btn btn-secondary" data-add-to-cart data-id="lune_blanche" data-name="Lune Blanche" data-price="365" data-size="90ML" data-type="Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuA9AYGwXpML2Tv5wxgAXXekppATpni1q2__io9F7K3126jenlyMnWJ-vfjjw3JLw43_4A_cb86eLN3FoRhXFuhdZnch7z-aArfncMKEwmX7kIHLskVIy0I1Kds47SqqKj3YvT-cAIu4zN82JU_HyoYT_2FvIwDvyerqq_5Rv0_s5epv3kl6XMLD33UHQdikKpn_gD3MZYrhJXnP_ZXa5wlIH2cPDI_vi9xRB8k2Yyx2M_4G5mmlcjWs2ZhoUGW9EgTvo6qpQojgEj8">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="floral night">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwQ4DB5PmFGBodesSTJUJZLoz6NKzonWnLLuo7vRX1cZVquTdF0HfR3zjPNNdZDnX7aTiUMeGy9JBaIqaY9gTboaC5LV7TzGxIBPsCXDaHDRV7-Xa-EdgmC8cGswyI8demYaGCpnBaMw7rFrFYuygT03gBLnxIRROZmdxfbiCfBYrRWDpGQkR8p5wcT65nOoamlXYTN46H0Mx14i2q9hA9C87N3iGgWgVeCa77GX8-oo-7X_24SC5_xFFwEE9sBskhaqpXUxJl9M4" alt="Obsidian Muse bottle" />
+          <div class="card-body">
+            <h3>Obsidian Muse</h3>
+            <p class="muted">Black orchid, saffron leather, patchouli</p>
+            <div class="row"><span class="price">$410</span><button class="btn btn-secondary" data-add-to-cart data-id="obsidian_muse" data-name="Obsidian Muse" data-price="410" data-size="100ML" data-type="Extrait" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCwQ4DB5PmFGBodesSTJUJZLoz6NKzonWnLLuo7vRX1cZVquTdF0HfR3zjPNNdZDnX7aTiUMeGy9JBaIqaY9gTboaC5LV7TzGxIBPsCXDaHDRV7-Xa-EdgmC8cGswyI8demYaGCpnBaMw7rFrFYuygT03gBLnxIRROZmdxfbiCfBYrRWDpGQkR8p5wcT65nOoamlXYTN46H0Mx14i2q9hA9C87N3iGgWgVeCa77GX8-oo-7X_24SC5_xFFwEE9sBskhaqpXUxJl9M4">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="woody amber">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Vn3Dv-CeBvD0fsrFPObL5VmKZuWqUqMcFGMiJ540U7h002GsLEcV6z-Oszq35mDC6ipL71MXc0EkxeWFFsT6zWgc9mJfI_6ZYIKCRn_S8GgWuf8sUhS_p72qTug3e8oF01EBp245fChGLFynNw_EUkuJnuGFi2thuk0t-G_U-ShafpLFpcL1S9ACjOK_GYD7MrFBr9pMe0hL8ACTAtOkKnSZ-CRgS2ZzZFFPNqZcNQxh0qXTgSDxGBdfMv_MocP0Qd0UlL1SO9Y" alt="Crimson Santal bottle" />
+          <div class="card-body">
+            <h3>Crimson Santal</h3>
+            <p class="muted">Red sandalwood, benzoin, cacao dust</p>
+            <div class="row"><span class="price">$375</span><button class="btn btn-secondary" data-add-to-cart data-id="crimson_santal" data-name="Crimson Santal" data-price="375" data-size="90ML" data-type="Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Vn3Dv-CeBvD0fsrFPObL5VmKZuWqUqMcFGMiJ540U7h002GsLEcV6z-Oszq35mDC6ipL71MXc0EkxeWFFsT6zWgc9mJfI_6ZYIKCRn_S8GgWuf8sUhS_p72qTug3e8oF01EBp245fChGLFynNw_EUkuJnuGFi2thuk0t-G_U-ShafpLFpcL1S9ACjOK_GYD7MrFBr9pMe0hL8ACTAtOkKnSZ-CRgS2ZzZFFPNqZcNQxh0qXTgSDxGBdfMv_MocP0Qd0UlL1SO9Y">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="floral night">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSwfJyzilhJ3CVQJ7CwDRlNoq_zdJqwkDBYXKRaTXCialzTLtjZFRYSdjeSGvoyp9E4tHK5q_oTfpWMMcT5LeRDO6cyp8R8lbC2WS9oVNttOMFlNvNIegv2373nGUI-HLieUFz9hOxsKovs-1e6HhRCc3_ai9IB_KPGtQseAa9tLr_Uqc6Uudl4ViaTwbWmFrZMO8C6Qok1yqYZBxagQW3tySzEI4zF6IfE6p6rc41rp6l3XrkWd194W4Ff2q0ygGWUZu-bpA-AGc" alt="Velours Nuit bottle" />
+          <div class="card-body">
+            <h3>Velours Nuit</h3>
+            <p class="muted">Night jasmine, plum skin, smoky vanilla</p>
+            <div class="row"><span class="price">$348</span><button class="btn btn-secondary" data-add-to-cart data-id="velours_nuit" data-name="Velours Nuit" data-price="348" data-size="75ML" data-type="Eau de Parfum" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCSwfJyzilhJ3CVQJ7CwDRlNoq_zdJqwkDBYXKRaTXCialzTLtjZFRYSdjeSGvoyp9E4tHK5q_oTfpWMMcT5LeRDO6cyp8R8lbC2WS9oVNttOMFlNvNIegv2373nGUI-HLieUFz9hOxsKovs-1e6HhRCc3_ai9IB_KPGtQseAa9tLr_Uqc6Uudl4ViaTwbWmFrZMO8C6Qok1yqYZBxagQW3tySzEI4zF6IfE6p6rc41rp6l3XrkWd194W4Ff2q0ygGWUZu-bpA-AGc">Quick Add</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-family="amber night">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuABywAJitH5gh02Cj35KKMGMhlwaY3cXpgOy29VoMpyGzf5IeqsiD3R9UJ7QGruBiJCoyk6LyCnVwiUXAAMCUm7LJ56a-rZPD6MnBATG3iT5dQjzxjSbqODt42hGKEC4D5JyQoCqve-3FocKZt0j1u-gnx0KTWftP_TWP8VnSuBD-9ak3ONv9ok-frVCTvc42u5arvdctsM4C_W093LuDAgTPZKliTK0e22KF9Kf4X9lt81IFOi-72_pdSkUBXsccTxLSLjGenHwv8" alt="Aetheris Noir bottle" />
+          <div class="card-body">
+            <h3>Aetheris Noir</h3>
+            <p class="muted">Incense ash, black rose, molten amber</p>
+            <div class="row"><span class="price">$460</span><button class="btn btn-secondary" data-add-to-cart data-id="aetheris_noir" data-name="Aetheris Noir" data-price="460" data-size="100ML" data-type="Extrait" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuABywAJitH5gh02Cj35KKMGMhlwaY3cXpgOy29VoMpyGzf5IeqsiD3R9UJ7QGruBiJCoyk6LyCnVwiUXAAMCUm7LJ56a-rZPD6MnBATG3iT5dQjzxjSbqODt42hGKEC4D5JyQoCqve-3FocKZt0j1u-gnx0KTWftP_TWP8VnSuBD-9ak3ONv9ok-frVCTvc42u5arvdctsM4C_W093LuDAgTPZKliTK0e22KF9Kf4X9lt81IFOi-72_pdSkUBXsccTxLSLjGenHwv8">Quick Add</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="row"><span>Crafted in Paris and Grasse</span><a href="cart.html">View Cart</a></div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="site-fixes.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - Aetheris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">Aetheris</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="product-detail.html">Signature</a>
+        <a href="bespoke.html">Bespoke</a>
+        <a href="profiles.html">Alchemy</a>
+      </nav>
+      <div class="header-tools">
+        <a class="icon-btn" href="login.html"><span class="material-symbols-outlined">person</span></a>
+        <a class="icon-btn" href="cart.html"><span class="material-symbols-outlined">shopping_bag</span><span class="cart-dot" data-cart-count style="display:none">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap section">
+    <section class="panel" style="padding:1.2rem; margin-bottom:1rem">
+      <p class="kicker">Shopping Bag</p>
+      <h1>Your Selection</h1>
+      <p class="lead">Every formula is prepared fresh in our atelier before dispatch.</p>
+    </section>
+
+    <section class="split">
+      <article class="panel" style="padding:1rem">
+        <div id="cart-items-container"></div>
+      </article>
+
+      <aside id="checkout-totals" class="panel" style="padding:1rem">
+        <h3>Order Summary</h3>
+        <div class="totals">
+          <div class="row"><span class="muted">Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+          <div class="row"><span class="muted">Estimated Tax</span><span id="cart-tax">$0.00</span></div>
+          <div class="row"><strong>Total</strong><strong id="cart-total" class="price">$0.00</strong></div>
+        </div>
+        <button class="btn btn-primary" style="width:100%; margin-top:1rem" data-proceed-checkout>Proceed To Checkout</button>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="row"><span>Worldwide insured shipping available.</span><a href="collections.html">Continue Shopping</a></div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="site-fixes.js"></script>
+</body>
+</html>

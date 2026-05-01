@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#ffb3ac",
+                    "on-surface": "#e2e2e2",
+                    "tertiary": "#c8c6c5",
+                    "tertiary-container": "#252525",
+                    "surface-variant": "#333535",
+                    "surface-container-highest": "#333535",
+                    "surface-container-high": "#282a2b",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "secondary": "#eec068",
+                    "primary-container": "#4d0a0a",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-bright": "#37393a",
+                    "inverse-surface": "#e2e2e2",
+                    "outline": "#a38b89",
+                    "secondary-fixed": "#ffdea6",
+                    "on-tertiary-container": "#8d8c8b",
+                    "outline-variant": "#554240",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-primary-fixed-variant": "#7b2d28",
+                    "on-secondary-fixed": "#271900",
+                    "on-surface-variant": "#dbc1be",
+                    "on-primary-fixed": "#400204",
+                    "on-primary-container": "#d26f67",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#ffdad6",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "secondary-fixed-dim": "#eec068",
+                    "on-tertiary": "#313030",
+                    "on-primary": "#5d1714",
+                    "primary": "#ffb3ac",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-background": "#e2e2e2",
+                    "inverse-on-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-secondary": "#412d00",
+                    "surface": "#121414",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#9a443e",
+                    "surface-container": "#1e2020",
+                    "on-secondary-container": "#f9ca71",
+                    "error-container": "#93000a",
+                    "secondary-container": "#755400",
+                    "background": "#121414",
+                    "on-secondary-fixed-variant": "#5d4200"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "glass-padding": "40px",
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "section-gap": "160px",
+                    "margin-page": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Noto Serif"],
+                    "body-md": ["Noto Serif"],
+                    "title-lg": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-lg": ["Noto Serif"],
+                    "label-caps": ["Noto Serif"],
+                    "display-xl": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "display-xl": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0c0f0f;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .deep-glass {
+            background: rgba(18, 20, 20, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(238, 192, 104, 0.2);
+        }
+        .mist-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 30%, rgba(77, 10, 10, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(117, 84, 0, 0.2) 0%, transparent 50%);
+        }
+        .nav-underline-expand {
+            position: relative;
+        }
+        .nav-underline-expand::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #eec068;
+            transition: all 0.5s ease;
+            transform: translateX(-50%);
+        }
+        .nav-underline-expand:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="mist-background"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-[40px] border-b border-amber-200/20">
+<nav class="flex justify-between items-center h-24 px-12 max-w-[1920px] mx-auto">
+<div class="text-2xl font-serif tracking-[0.3em] text-amber-200">Aetheris Luxe</div>
+<div class="hidden md:flex gap-12">
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500 nav-underline-expand" href="#">Collections</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200 border-b-2 border-amber-200 pb-1" href="#">The Alchemy</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500 nav-underline-expand" href="#">Bespoke</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500 nav-underline-expand" href="#">Atelier</a>
+</div>
+<div class="flex items-center gap-8 text-amber-200/90">
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-200 transition-colors">shopping_bag</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-200 transition-colors">person</span>
+</div>
+</nav>
+</header>
+<main class="pt-48 pb-section-gap max-w-[1440px] mx-auto px-margin-page">
+<!-- Hero Section -->
+<section class="mb-section-gap text-center max-w-4xl mx-auto">
+<h2 class="font-label-caps text-label-caps text-secondary mb-6">Discovery</h2>
+<h1 class="font-display-xl text-display-xl text-on-surface mb-8">Scent Profiles</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Navigate the olfactory spectrum through our curated families. Each essence is a chapter in a sensory narrative, crafted with the precision of high alchemy.
+            </p>
+</section>
+<!-- Category Filter -->
+<div class="flex justify-center gap-4 mb-24 flex-wrap">
+<button class="px-8 py-3 deep-glass rounded-full font-label-caps text-label-caps text-secondary border-secondary/50">ALL FAMILIES</button>
+<button class="px-8 py-3 bg-primary-container/20 border border-secondary/20 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:border-secondary/60 transition-all">FLORAL</button>
+<button class="px-8 py-3 bg-primary-container/20 border border-secondary/20 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:border-secondary/60 transition-all">WOODY</button>
+<button class="px-8 py-3 bg-primary-container/20 border border-secondary/20 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:border-secondary/60 transition-all">CITRUS</button>
+<button class="px-8 py-3 bg-primary-container/20 border border-secondary/20 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:border-secondary/60 transition-all">ORIENTAL</button>
+</div>
+<!-- Bento Grid Products -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Product Card 1: Large Featured -->
+<div class="col-span-12 lg:col-span-8 group cursor-pointer">
+<div class="deep-glass relative overflow-hidden rounded-lg h-[600px] flex items-center justify-center p-glass-padding">
+<img alt="Luxe Perfume Bottle" class="h-4/5 object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-2xl" data-alt="A sculptural, heavy-glass perfume bottle containing golden liquid, illuminated by high-contrast spotlighting against a deep charcoal background. The atmosphere is nocturnal and exclusive, with fine mist floating in the air. Reflections of champagne gold light dance on the polished surfaces, echoing the brand's atmospheric opulence and premium artisan craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3pNEBezO125Im-xJxEE6HLI3esZLpgItzF3fyrRyETF1Lkd4YS_1LZNVRcFxvvx0MgPLC2ldpqAhJrUz6G3dFGNhe9622q88XF6qrSGcRI-cvudnl8DEysn0fqKpt_em-A-kT2SVQZ9owWEq-hLG7zrVvnZXvN3gBpSjsw33OPFS0iPuxbBDNZ0Y3f9ieKZ2pqncjwa2qj3Zo83wwOuI_DWsC2b8Z9IYx6N2DrUya0cw3888ELdK6jPmO7wiXrqrXc3PGMkUOAkE"/>
+<div class="absolute top-10 left-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container-lowest/80 border border-primary/30 font-label-caps text-[10px] text-on-surface tracking-widest uppercase">Oriental Family</span>
+</div>
+<div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Nocturnal Amber</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Top notes of saffron and black violet.</p>
+</div>
+<button class="h-12 w-12 rounded-full border border-secondary flex items-center justify-center text-secondary hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="col-span-12 lg:col-span-4 group cursor-pointer">
+<div class="deep-glass relative overflow-hidden rounded-lg h-[600px] flex flex-col p-glass-padding">
+<div class="h-3/4 flex items-center justify-center">
+<img alt="Luxury Fragrance" class="h-full object-contain transition-transform duration-700 group-hover:scale-110" data-alt="An elegant, minimalist fragrance bottle featuring a dark obsidian cap and clear glass body, positioned within a soft-focus atmosphere of deep maroon and champagne gold light. The lighting is moody and dramatic, casting long, soft shadows that emphasize the high-fidelity textures. The image conveys a sense of quiet luxury and olfactory sophistication in a modern boutique setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-D2lfLNB2DzxzmRcWc57ovGGvdLGlt4rM_moiO8Llupl6NiiJqrePRlnBVwxjbxnq6gs-NBnju5-L52o7LAew_Xg7iUa3mplk-qpaCTo0Xk9vlC0I2HnjC-s-r3QXt_lhRkB-Dkp6rkKuo4QzfM4lObyBPwb9GHhU81h-IqvRbGqqBP5MIbi3gaA35DWh2DUZtfLPlS5YVzpOOjEF9KlYzrPVeuSRUrDiqNcVcr97INhKuhMdZ-T7UmgFxVg_t-GojxtPrMPfb3s"/>
+</div>
+<div class="mt-auto">
+<span class="font-label-caps text-[10px] text-secondary tracking-[0.2em] uppercase mb-2 block">Woody Family</span>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2">Ironwood Spirit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Cedarwood, sandalwood, and charred paper accord.</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="col-span-12 lg:col-span-4 group cursor-pointer">
+<div class="deep-glass relative overflow-hidden rounded-lg h-[500px] flex flex-col p-glass-padding">
+<div class="h-2/3 flex items-center justify-center">
+<img alt="Fragrance Profile" class="h-full object-contain transition-transform duration-700 group-hover:rotate-2 group-hover:scale-105" data-alt="A premium rectangular perfume bottle with a matte black finish and gold typography, standing on a reflective obsidian surface. A subtle, hazy gradient of royal maroon flows in the background, simulating a light passing through fine liquid mist. The scene feels sacred and high-end, utilizing deep glassmorphism effects and soft inner glows to define the silhouette of the bottle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR5AuLvlwLaZBOtx47Cq78xyECJrmcDGTQkgMwnWB36oFau79SM6OPqPMyNaM9HyxYFWdANtMBLZiQqSsZ8SgUhB9zHecvpTKyJxKafBy7syWI8WUMSKxbyqY6smwBZT2xOT9d9KsMTZ7hUyzgYl_AfhFsfIIUYn72VOQxg4N6gB9UuoncIKQgyuNjUJVlQZpDQTRGkaU9TAT50aMEBd-daxx-SSrkgddxvh7bi878lT2txEPdca-AC0R7LyWHhqR9j07r5aZ2nuk"/>
+</div>
+<div class="mt-auto">
+<span class="font-label-caps text-[10px] text-secondary tracking-[0.2em] uppercase mb-2 block">Citrus Family</span>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2">Bergamot Solstice</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Calabrian bergamot, neroli, and sea salt.</p>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Wide -->
+<div class="col-span-12 lg:col-span-8 group cursor-pointer">
+<div class="deep-glass relative overflow-hidden rounded-lg h-[500px] grid grid-cols-2">
+<div class="p-glass-padding flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-secondary tracking-[0.2em] uppercase mb-4 block">Floral Family</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Ethereal Rose</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Damask rose, white musk, and a hint of metallic dew.</p>
+<button class="w-fit px-8 py-3 border border-secondary rounded-full font-label-caps text-label-caps text-secondary hover:bg-secondary hover:text-on-secondary transition-all">VIEW COLLECTION</button>
+</div>
+<div class="relative overflow-hidden flex items-center justify-center p-glass-padding">
+<img alt="Rose Fragrance" class="h-full object-contain transition-transform duration-700 group-hover:scale-125" data-alt="A delicate yet powerful crystal perfume flacon surrounded by soft, dark red rose petals, set against a blurred background of deep glass and obsidian. Warm golden light filters through the glass, creating a shimmering effect that mimics the interior of a private midnight boutique. The composition is balanced and artistic, emphasizing the artisanal quality and precious nature of the fragrance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgH_wnb4zXNt8kMg7jtJl5Uc1CVVmixxNqleIyMg9wT8WYFrYsJXOvEHbZj69_j7j90O1NUo2qcIaIaTMU6h3pnI0suhz-WAwRJYOyZJ65ygciskuET6oE6nazlLGDQ9kHrn_aPmwEkKjsj1PgN51BNvLr5goMVRB9lRDRvug9TTO1UepOwHRhrhPvEnYf7DQJFeorRPAzEM8oedEGXXI6kNve42TYbbNlGRt8XqB0ONQLTcy_eJQ0DrqQKMQmIgszH5vAHfAFHOE"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Narrative -->
+<section class="mt-section-gap py-32 border-t border-amber-200/10 text-center">
+<div class="max-w-3xl mx-auto">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">The Alchemy of Scent</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed italic">
+                    "Perfume is the most intense form of memory. It is a portal to the unseen, a liquid bridge between the tangible and the ethereal. Our profiles are curated for those who seek to transcend the ordinary."
+                </p>
+<div class="mt-12 w-24 h-[1px] bg-secondary/30 mx-auto"></div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full bg-neutral-950 border-t border-amber-200/10">
+<div class="flex flex-col items-center justify-center py-20 px-8 gap-8">
+<div class="text-xl font-serif tracking-[0.2em] text-amber-200">Aetheris Luxe</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Shipping &amp; Returns</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="font-serif uppercase tracking-widest text-[10px] text-amber-200/80">
+                © 2024 Aetheris Luxe. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(18, 20, 20, 0.7);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(238, 192, 104, 0.2);
+        }
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+        }
+        .bg-mist {
+            filter: blur(200px);
+            opacity: 0.15;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#c8c6c5",
+                        "on-secondary-container": "#f9ca71",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#333535",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#8d8c8b",
+                        "inverse-primary": "#9a443e",
+                        "secondary-fixed-dim": "#eec068",
+                        "on-primary-fixed": "#400204",
+                        "surface-bright": "#37393a",
+                        "on-tertiary": "#313030",
+                        "surface-tint": "#ffb3ac",
+                        "primary-container": "#4d0a0a",
+                        "on-background": "#e2e2e2",
+                        "on-primary-fixed-variant": "#7b2d28",
+                        "primary": "#ffb3ac",
+                        "secondary-container": "#755400",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-error": "#690005",
+                        "surface-container": "#1e2020",
+                        "surface-dim": "#121414",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#ffdad6",
+                        "background": "#121414",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline-variant": "#554240",
+                        "on-secondary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "secondary": "#eec068",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "on-secondary": "#412d00",
+                        "on-primary-container": "#d26f67",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-low": "#1a1c1c",
+                        "surface": "#121414",
+                        "tertiary-container": "#252525",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-primary": "#5d1714",
+                        "outline": "#a38b89",
+                        "on-surface-variant": "#dbc1be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "section-gap": "160px",
+                        "margin-page": "80px",
+                        "glass-padding": "40px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Noto Serif"],
+                        "label-caps": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "title-lg": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-md": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "title-lg": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen relative overflow-x-hidden font-body-md">
+<!-- Cinematic Background -->
+<div class="fixed inset-0 -z-20 overflow-hidden">
+<img class="w-full h-full object-cover opacity-30 scale-110" data-alt="A cinematic, wide-angle interior shot of a dark, luxurious perfume boutique at midnight. The space is defined by deep obsidian shelves, ambient warm spotlights hitting crystal perfume bottles, and rich velvet textures. The lighting is moody and low-key, with shimmering champagne gold accents and long, elegant shadows cast across a polished dark marble floor, evoking an atmosphere of extreme exclusivity and quiet opulence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdt8RsYXFLR-tyzgTg2fqHHUzBwVqOB-MQB5wIFg7pLRubsJ8EJjlk-eS1ZAvcEx5yMsEMlcalxCSyMFjv1irdU1_ciFi0jvrRBlLIpHQBPt8nnZA8st1Jy2WeEpYyU7VzW4aePpSK95En9jeOc7-yu76PCUohbFjN0HPLc9I7nLbjWidz528kcDcsp2FXQMtEdeYjn3gBRVvgw9JrqPIBRjlODNLsNMXHkkJ6UpDjbJJrZesCsLplNzG0HCGU4Y4kCNr-m3kLUmE"/>
+<div class="absolute inset-0 bg-gradient-to-b from-stone-950 via-transparent to-stone-950"></div>
+</div>
+<!-- Atmospheric Glows -->
+<div class="fixed -top-[400px] -left-[400px] w-[800px] h-[800px] rounded-full bg-primary/20 bg-mist -z-10"></div>
+<div class="fixed -bottom-[400px] -right-[400px] w-[800px] h-[800px] rounded-full bg-secondary/20 bg-mist -z-10"></div>
+<!-- Header (Suppressed Nav for Transactional focus as per JSON logic) -->
+<header class="fixed top-0 w-full z-50 bg-stone-950/40 backdrop-blur-[40px] border-b border-amber-200/20">
+<div class="flex justify-between items-center px-12 h-24 w-full">
+<h1 class="text-2xl font-serif tracking-[0.4em] text-amber-200 uppercase">AETHERIS</h1>
+<div class="flex gap-8 items-center">
+<span class="font-label-caps text-label-caps text-amber-200/60 uppercase">Secure Checkout</span>
+<span class="material-symbols-outlined text-amber-200">lock</span>
+</div>
+</div>
+</header>
+<main class="pt-40 pb-section-gap px-4 md:px-8 max-w-5xl mx-auto">
+<!-- Step Indicator -->
+<div class="flex justify-center items-center gap-4 mb-20">
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center text-secondary bg-secondary/10">
+<span class="font-label-caps text-[14px]">01</span>
+</div>
+<span class="font-label-caps text-[10px] text-secondary uppercase tracking-[0.2em]">Shipping</span>
+</div>
+<div class="w-20 h-[1px] bg-amber-200/20 mb-6"></div>
+<div class="flex flex-col items-center gap-3 opacity-40">
+<div class="w-10 h-10 rounded-full border border-amber-200/40 flex items-center justify-center text-amber-200/40">
+<span class="font-label-caps text-[14px]">02</span>
+</div>
+<span class="font-label-caps text-[10px] text-amber-200/60 uppercase tracking-[0.2em]">Payment</span>
+</div>
+<div class="w-20 h-[1px] bg-amber-200/20 mb-6"></div>
+<div class="flex flex-col items-center gap-3 opacity-40">
+<div class="w-10 h-10 rounded-full border border-amber-200/40 flex items-center justify-center text-amber-200/40">
+<span class="font-label-caps text-[14px]">03</span>
+</div>
+<span class="font-label-caps text-[10px] text-amber-200/60 uppercase tracking-[0.2em]">Summary</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Forms -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Section 1: Shipping Details -->
+<section class="glass-panel p-glass-padding rounded-lg shadow-[0_8px_32px_0_rgba(0,0,0,0.6)]">
+<h2 class="font-headline-md text-headline-md text-amber-200 mb-10">Shipping Details</h2>
+<form class="space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-amber-200/60 uppercase absolute -top-6 left-0 transition-all group-focus-within:text-amber-200">First Name</label>
+<input class="w-full bg-transparent border-0 border-b border-amber-200/30 focus:border-amber-200 focus:ring-0 text-amber-100 font-body-md py-2 px-0 transition-colors" placeholder="e.g. Julian" type="text"/>
+</div>
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-amber-200/60 uppercase absolute -top-6 left-0 transition-all group-focus-within:text-amber-200">Last Name</label>
+<input class="w-full bg-transparent border-0 border-b border-amber-200/30 focus:border-amber-200 focus:ring-0 text-amber-100 font-body-md py-2 px-0 transition-colors" placeholder="e.g. Sterling" type="text"/>
+</div>
+<div class="md:col-span-2 relative group">
+<label class="font-label-caps text-label-caps text-amber-200/60 uppercase absolute -top-6 left-0 transition-all group-focus-within:text-amber-200">Street Address</label>
+<input class="w-full bg-transparent border-0 border-b border-amber-200/30 focus:border-amber-200 focus:ring-0 text-amber-100 font-body-md py-2 px-0 transition-colors" placeholder="Place Vendôme, No. 23" type="text"/>
+</div>
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-amber-200/60 uppercase absolute -top-6 left-0 transition-all group-focus-within:text-amber-200">City</label>
+<input class="w-full bg-transparent border-0 border-b border-amber-200/30 focus:border-amber-200 focus:ring-0 text-amber-100 font-body-md py-2 px-0 transition-colors" placeholder="Paris" type="text"/>
+</div>
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-amber-200/60 uppercase absolute -top-6 left-0 transition-all group-focus-within:text-amber-200">Postal Code</label>
+<input class="w-full bg-transparent border-0 border-b border-amber-200/30 focus:border-amber-200 focus:ring-0 text-amber-100 font-body-md py-2 px-0 transition-colors" placeholder="75001" type="text"/>
+</div>
+</div>
+</form>
+</section>
+<!-- Section 2: Payment (Glassmorphic) -->
+<section class="glass-panel p-glass-padding rounded-lg shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] border-amber-200/10">
+<div class="flex justify-between items-center mb-10">
+<h2 class="font-headline-md text-headline-md text-amber-200/40">Secure Payment</h2>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-amber-200/40">credit_card</span>
+<span class="material-symbols-outlined text-amber-200/40">account_balance_wallet</span>
+</div>
+</div>
+<div class="bg-stone-900/40 p-8 rounded border border-amber-200/5 mb-8">
+<div class="flex items-center gap-4 text-amber-200/40 mb-2">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-caps text-[10px] uppercase">Information Encryption Active</span>
+</div>
+<p class="text-amber-200/30 font-body-md text-sm">Proceed to payment to reveal glassmorphic secure inputs. All transactions are protected by high-fidelity RSA encryption.</p>
+</div>
+<button class="w-full py-6 bg-primary-container border border-secondary text-secondary font-label-caps text-label-caps uppercase tracking-[0.3em] hover:bg-secondary/10 transition-all duration-500 flex items-center justify-center gap-4 group">
+                        Proceed to Payment
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<aside class="lg:col-span-4">
+<div class="glass-panel p-8 rounded-lg sticky top-32">
+<h3 class="font-title-lg text-title-lg text-amber-200 mb-8 pb-4 border-b border-amber-200/10">The Selection</h3>
+<div class="space-y-6 mb-8">
+<div class="flex gap-4">
+<div class="w-20 h-24 bg-stone-900 rounded overflow-hidden flex-shrink-0 border border-amber-200/10">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a sleek, rectangular perfume bottle with a heavy magnetic gold cap, resting on a dark velvet surface. The label features minimalist gold typography on a black background. The glass bottle reflects soft amber light, revealing a rich, cognac-colored liquid inside, symbolizing the peak of artisanal perfumery in a nocturnal luxury setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqoIxyIfDBE3jROwcpFHZ3EPvkOCDf2G-rnGDyD88ZSFCeJyojQmYptIHFMzrMdQhIBfo8kVyIcRdGKFlfyM14G39cT_13FytdZQRc7eoJwUm863BDtOzpHueat9l9Xcb8iOcHyendqzVSsPfVvLRVeDBsJFfok7CSVDycqZajqgHg1MVB2elIGh9NEfMb62WOYK9pql6cgGcWzv3oLuTeXWJWIIJX03wAqh1TNu3isYHso6OHHG8Qys8nLtEFX8ikizFH2QweBos"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-amber-200/60 uppercase mb-1">Collection Heritage</span>
+<h4 class="font-body-lg text-body-lg text-amber-100">Midnight Oud</h4>
+<span class="font-body-md text-amber-200/40 text-sm">100ml / Extrait de Parfum</span>
+</div>
+<div class="ml-auto font-body-md text-amber-200 pt-1">€420</div>
+</div>
+<div class="flex gap-4">
+<div class="w-20 h-24 bg-stone-900 rounded overflow-hidden flex-shrink-0 border border-amber-200/10">
+<img class="w-full h-full object-cover" data-alt="A minimalist frosted glass perfume bottle with a cylindrical design, reflecting soft champagne light from a distance. The bottle stands on a dark, reflective pedestal surrounded by a gentle mist. The scene is illuminated by a single vertical light beam, creating a high-end, mysterious boutique aesthetic with deep blacks and shimmering gold hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMimgczyo29HJGzsfORKdD0Dn0Pzx463NrGMsdY6_sJB_k0sHWKLGITa0cB-VmsLNxvEeAR6FP72xbQc7yslAzwm_dEmFQn5wyGL9gwx8ojjvxa4f2UflZBTCngJ2_XXpC-UcuzBqIsm2OWImgwf59mRd2g5XonC5diGXwq5KO_ijBmch38u2_f6dsPweDRa05AsUa_UB3skWzQRwFY_hhGrVPH2ydzVXDKOJqkgMDRUgWtrI1-tOrJ84ejabrVI9QhNw9uJ0V9fc"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-amber-200/60 uppercase mb-1">Limited Edition</span>
+<h4 class="font-body-lg text-body-lg text-amber-100">Silk Veil</h4>
+<span class="font-body-md text-amber-200/40 text-sm">50ml / Eau de Parfum</span>
+</div>
+<div class="ml-auto font-body-md text-amber-200 pt-1">€280</div>
+</div>
+</div>
+<div class="space-y-4 pt-6 border-t border-amber-200/10">
+<div class="flex justify-between font-label-caps text-label-caps text-amber-200/40 uppercase">
+<span>Subtotal</span>
+<span>€700.00</span>
+</div>
+<div class="flex justify-between font-label-caps text-label-caps text-amber-200/40 uppercase">
+<span>Bespoke Shipping</span>
+<span>Included</span>
+</div>
+<div class="flex justify-between font-title-lg text-title-lg text-amber-200 pt-4 border-t border-amber-200/10 mt-4">
+<span>Total</span>
+<span>€700.00</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Success Alert (Hidden by default, used for demonstration/logic) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-8 bg-stone-950/80 backdrop-blur-xl" id="success-overlay">
+<div class="glass-panel max-w-2xl w-full p-20 rounded-lg text-center border-amber-200/30 relative overflow-hidden">
+<div class="absolute -top-20 -left-20 w-60 h-60 bg-secondary/20 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-20 -right-20 w-60 h-60 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="w-24 h-24 rounded-full border border-secondary flex items-center justify-center mx-auto mb-10">
+<span class="material-symbols-outlined text-5xl text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-display-xl text-headline-lg text-amber-200 mb-6">Grand Success</h2>
+<p class="font-body-lg text-body-lg text-amber-200/60 mb-12 max-w-md mx-auto">Your order #ATH-8829 has been processed. Our atelier is now preparing your olfactory journey for transit.</p>
+<button class="px-12 py-5 bg-secondary text-stone-950 font-label-caps text-label-caps uppercase tracking-[0.4em] hover:scale-105 transition-transform duration-300">
+                    Return to Atelier
+                </button>
+</div>
+</div>
+</main>
+<!-- Simple Footer for Transactional Pages -->
+<footer class="w-full border-t border-amber-200/10 bg-stone-950">
+<div class="flex flex-col items-center gap-8 py-20 px-8 max-w-7xl mx-auto">
+<div class="text-amber-200 opacity-50 font-serif tracking-[0.3em] text-lg uppercase">AETHERIS</div>
+<nav class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+<a class="font-serif text-[10px] tracking-widest uppercase text-amber-200/40 hover:text-amber-200 transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-serif text-[10px] tracking-widest uppercase text-amber-200/40 hover:text-amber-200 transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-serif text-[10px] tracking-widest uppercase text-amber-200/40 hover:text-amber-200 transition-colors duration-300" href="#">Boutique Finder</a>
+<a class="font-serif text-[10px] tracking-widest uppercase text-amber-200/40 hover:text-amber-200 transition-colors duration-300" href="#">Contact</a>
+</nav>
+<p class="font-serif text-[10px] tracking-widest uppercase text-amber-200/40">© 2024 AETHERIS PERFUMERY. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

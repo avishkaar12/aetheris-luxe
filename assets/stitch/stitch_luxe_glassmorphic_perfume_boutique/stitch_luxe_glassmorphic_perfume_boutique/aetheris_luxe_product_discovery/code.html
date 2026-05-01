@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      background-color: #121414;
+      color: #e2e2e2;
+      font-family: 'Noto Serif', serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .deep-mist {
+      background: radial-gradient(circle at 50% 50%, rgba(77, 10, 10, 0.3) 0%, rgba(18, 20, 20, 0) 70%);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#e2e2e2",
+            "on-tertiary-fixed": "#1c1b1b",
+            "error": "#ffb4ab",
+            "tertiary-fixed": "#e5e2e1",
+            "surface-container-lowest": "#0c0f0f",
+            "secondary-container": "#755400",
+            "surface-dim": "#121414",
+            "on-secondary": "#412d00",
+            "tertiary": "#c8c6c5",
+            "on-primary-fixed-variant": "#7b2d28",
+            "secondary-fixed": "#ffdea6",
+            "surface-variant": "#333535",
+            "surface-bright": "#37393a",
+            "primary-fixed-dim": "#ffb3ac",
+            "on-primary": "#5d1714",
+            "surface-container-low": "#1a1c1c",
+            "secondary-fixed-dim": "#eec068",
+            "surface-tint": "#ffb3ac",
+            "secondary": "#eec068",
+            "on-tertiary-container": "#8d8c8b",
+            "background": "#121414",
+            "outline": "#a38b89",
+            "on-secondary-container": "#f9ca71",
+            "tertiary-container": "#252525",
+            "surface-container-high": "#282a2b",
+            "on-error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#c8c6c5",
+            "primary-fixed": "#ffdad6",
+            "on-secondary-fixed": "#271900",
+            "on-tertiary-fixed-variant": "#474646",
+            "inverse-primary": "#9a443e",
+            "primary-container": "#4d0a0a",
+            "on-background": "#e2e2e2",
+            "inverse-on-surface": "#2f3131",
+            "on-primary-fixed": "#400204",
+            "on-primary-container": "#d26f67",
+            "primary": "#ffb3ac",
+            "outline-variant": "#554240",
+            "inverse-surface": "#e2e2e2",
+            "on-tertiary": "#313030",
+            "on-secondary-fixed-variant": "#5d4200",
+            "surface-container": "#1e2020",
+            "error-container": "#93000a",
+            "on-surface-variant": "#dbc1be",
+            "surface-container-highest": "#333535",
+            "surface": "#121414",
+            "on-error": "#690005"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "section-gap": "160px",
+            "container-max": "1440px",
+            "unit": "8px",
+            "margin-page": "80px",
+            "glass-padding": "40px",
+            "gutter": "32px"
+          },
+          "fontFamily": {
+            "title-lg": ["Noto Serif"],
+            "display-xl": ["Noto Serif"],
+            "body-lg": ["Noto Serif"],
+            "label-caps": ["Noto Serif"],
+            "headline-md": ["Noto Serif"],
+            "body-md": ["Noto Serif"],
+            "headline-lg": ["Noto Serif"]
+          },
+          "fontSize": {
+            "title-lg": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+            "display-xl": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full border-b border-[#D4AF37]/20 bg-black/60 backdrop-blur-[40px] flex justify-between items-center px-12 h-24 w-full z-50">
+<div class="text-2xl font-light tracking-[0.2em] text-[#D4AF37]">Aetheris Luxe</div>
+<nav class="hidden md:flex space-x-12">
+<a class="font-['Noto_Serif'] tracking-widest uppercase text-xs text-[#D4AF37]/60 hover:text-[#D4AF37] transition-colors duration-500" href="#">Heritage</a>
+<a class="font-['Noto_Serif'] tracking-widest uppercase text-xs text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1" href="#">Fragrance Vault</a>
+<a class="font-['Noto_Serif'] tracking-widest uppercase text-xs text-[#D4AF37]/60 hover:text-[#D4AF37] transition-colors duration-500" href="#">Atelier</a>
+</nav>
+<div class="flex items-center space-x-6 text-[#D4AF37]">
+<button class="material-symbols-outlined hover:scale-110 transition-transform">shopping_bag</button>
+<button class="material-symbols-outlined hover:scale-110 transition-transform">person</button>
+</div>
+</header>
+<main class="relative pt-24 min-h-screen overflow-hidden">
+<!-- Atmospheric Background Layers -->
+<div class="absolute top-1/4 -left-1/4 w-[600px] h-[600px] deep-mist rounded-full blur-[120px] opacity-40"></div>
+<div class="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] opacity-20"></div>
+<div class="max-w-[1440px] mx-auto px-margin-page py-20">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<!-- Artistic Product Imagery -->
+<div class="col-span-12 lg:col-span-7 relative group">
+<div class="absolute -inset-4 border border-secondary/10 rounded-lg pointer-events-none group-hover:border-secondary/30 transition-all duration-700"></div>
+<div class="glass-effect rounded-lg overflow-hidden shadow-2xl">
+<img class="w-full h-[700px] object-cover mix-blend-lighten grayscale-[0.2] hover:scale-105 transition-transform duration-[2000ms] ease-out" data-alt="A high-fashion, cinematic product shot of a Midnight Obsidian perfume flacon. The crystal bottle is deep obsidian black with faceted edges that catch sharp, gold rim lighting. It sits on a dark, reflective surface amidst a soft, swirling mist of deep maroon and golden amber. The lighting is dramatic and moody, emphasizing the luxurious texture of the heavy glass and the shimmering champagne gold liquid inside. The overall aesthetic is one of atmospheric opulence and nocturnal elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuxkGYmCZD42BuQgzoD9uIRthpM-p9bGcI93BaFcz6QXNTJP8snHo89MPJTLmWofYIZ2TM1FbNIeqce98Mhzj2G6_0nWVczEEHWiKjecuKz2vAUGlhOcR312ox4jpjUeMdWanfeaDs5zhbS-xsFNW0tZEnMY_7tEHFqA4SB8q1XIoSbkNqJ6mMPApaqH8Sn4fTiEIB-RZ4cwx1nz6BbIsfjZCGnW19p2shH-lOfCUW78E1vHuYeCOftX9WAe6Q1ONzIndmpAlD0dI"/>
+</div>
+<!-- Floating Maturation Badge -->
+<div class="absolute top-10 left-10 glass-effect px-6 py-3 rounded-full flex items-center space-x-3">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-caps text-label-caps text-secondary">Maturation Status: 18 Months Macerated</span>
+</div>
+</div>
+<!-- Product Details Canvas -->
+<div class="col-span-12 lg:col-span-5 space-y-12 pl-0 lg:pl-12">
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-secondary/60 tracking-[0.3em]">EXTRAIT DE PARFUM</span>
+<h1 class="font-display-xl text-display-xl text-on-surface leading-tight">Midnight Obsidian</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+              A profound olfactory journey into the heart of the nocturnal forest. Rare oud intertwined with celestial spices, capturing the essence of a shadow-drenched ritual.
+            </p>
+</div>
+<!-- Scent Profile Bento Section -->
+<div class="space-y-6">
+<h3 class="font-label-caps text-label-caps text-secondary">SCENT PROFILE</h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Top Notes -->
+<div class="glass-effect p-glass-padding rounded-lg group hover:bg-secondary/5 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-secondary" data-icon="air">air</span>
+<div>
+<p class="font-label-caps text-[10px] text-secondary/50">TOP NOTES</p>
+<p class="font-title-lg text-title-lg text-on-surface">Bergamot, Neroli</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary/20 group-hover:text-secondary transition-colors">colors_spark</span>
+</div>
+</div>
+<!-- Heart Notes -->
+<div class="glass-effect p-glass-padding rounded-lg group hover:bg-secondary/5 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-secondary" data-icon="favorite">favorite</span>
+<div>
+<p class="font-label-caps text-[10px] text-secondary/50">HEART NOTES</p>
+<p class="font-title-lg text-title-lg text-on-surface">Damask Rose, Jasmine</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary/20 group-hover:text-secondary transition-colors">filter_vintage</span>
+</div>
+</div>
+<!-- Base Notes -->
+<div class="glass-effect p-glass-padding rounded-lg group hover:bg-secondary/5 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-secondary" data-icon="forest">forest</span>
+<div>
+<p class="font-label-caps text-[10px] text-secondary/50">BASE NOTES</p>
+<p class="font-title-lg text-title-lg text-on-surface">Oud, Sandalwood</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary/20 group-hover:text-secondary transition-colors">terrain</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-8 flex flex-col sm:flex-row items-center gap-6">
+<button class="w-full sm:w-auto bg-primary-container border border-secondary/30 px-12 py-5 rounded-lg flex items-center justify-center space-x-4 group hover:bg-on-primary-fixed-variant transition-all duration-500">
+<span class="font-label-caps text-label-caps text-secondary">ADD TO COLLECTION</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="text-right">
+<p class="font-label-caps text-secondary/40 text-[10px]">RETAIL PRESTIGE</p>
+<p class="font-title-lg text-title-lg text-secondary">$450.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#D4AF37]/10 bg-black flex flex-col items-center py-20 px-4 space-y-8 w-full">
+<div class="text-[#D4AF37] font-semibold tracking-widest text-lg">AETHERIS LUXE</div>
+<div class="flex flex-wrap justify-center gap-12">
+<a class="font-['Noto_Serif'] text-[10px] tracking-widest uppercase text-[#D4AF37]/50 hover:text-[#D4AF37] underline decoration-[#D4AF37]/30 underline-offset-8 transition-opacity" href="#">Our Heritage</a>
+<a class="font-['Noto_Serif'] text-[10px] tracking-widest uppercase text-[#D4AF37]/50 hover:text-[#D4AF37] underline decoration-[#D4AF37]/30 underline-offset-8 transition-opacity" href="#">Artisan Philosophy</a>
+<a class="font-['Noto_Serif'] text-[10px] tracking-widest uppercase text-[#D4AF37]/50 hover:text-[#D4AF37] underline decoration-[#D4AF37]/30 underline-offset-8 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Noto_Serif'] text-[10px] tracking-widest uppercase text-[#D4AF37]/50 hover:text-[#D4AF37] underline decoration-[#D4AF37]/30 underline-offset-8 transition-opacity" href="#">Contact Concierge</a>
+</div>
+<p class="font-['Noto_Serif'] text-[10px] tracking-widest uppercase text-[#D4AF37]/30">© 2024 Aetheris Luxe. All Rights Reserved.</p>
+</footer>
+</body></html>

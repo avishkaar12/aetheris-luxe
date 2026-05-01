@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#ffb3ac",
+                    "on-surface": "#e2e2e2",
+                    "tertiary": "#c8c6c5",
+                    "tertiary-container": "#252525",
+                    "surface-variant": "#333535",
+                    "surface-container-highest": "#333535",
+                    "surface-container-high": "#282a2b",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "secondary": "#eec068",
+                    "primary-container": "#4d0a0a",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-bright": "#37393a",
+                    "inverse-surface": "#e2e2e2",
+                    "outline": "#a38b89",
+                    "secondary-fixed": "#ffdea6",
+                    "on-tertiary-container": "#8d8c8b",
+                    "outline-variant": "#554240",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-primary-fixed-variant": "#7b2d28",
+                    "on-secondary-fixed": "#271900",
+                    "on-surface-variant": "#dbc1be",
+                    "on-primary-fixed": "#400204",
+                    "on-primary-container": "#d26f67",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#ffdad6",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "secondary-fixed-dim": "#eec068",
+                    "on-tertiary": "#313030",
+                    "on-primary": "#5d1714",
+                    "primary": "#ffb3ac",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-background": "#e2e2e2",
+                    "inverse-on-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-secondary": "#412d00",
+                    "surface": "#121414",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#9a443e",
+                    "surface-container": "#1e2020",
+                    "on-secondary-container": "#f9ca71",
+                    "error-container": "#93000a",
+                    "secondary-container": "#755400",
+                    "background": "#121414",
+                    "on-secondary-fixed-variant": "#5d4200"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "glass-padding": "40px",
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "section-gap": "160px",
+                    "margin-page": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Noto Serif"],
+                    "body-md": ["Noto Serif"],
+                    "title-lg": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-lg": ["Noto Serif"],
+                    "label-caps": ["Noto Serif"],
+                    "display-xl": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "display-xl": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(18, 20, 20, 0.8);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-left: 1px solid rgba(238, 192, 104, 0.2);
+        }
+        .atmospheric-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(77, 10, 10, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(238, 192, 104, 0.05) 0%, transparent 50%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(238, 192, 104, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen atmospheric-bg overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-[40px] border-b border-amber-200/20">
+<div class="flex justify-between items-center h-24 px-12 max-w-[1920px] mx-auto">
+<div class="text-2xl font-serif tracking-[0.3em] text-amber-200">Aetheris Luxe</div>
+<div class="hidden md:flex gap-12">
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500" href="#">Collections</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500" href="#">The Alchemy</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500" href="#">Bespoke</a>
+<a class="font-serif uppercase tracking-[0.2em] text-[11px] text-amber-200/60 hover:text-amber-200 transition-all duration-500" href="#">Atelier</a>
+</div>
+<div class="flex items-center gap-8">
+<span class="material-symbols-outlined text-amber-200/90 cursor-pointer scale-100 active:scale-95 transition-transform" data-icon="person">person</span>
+<div class="relative cursor-pointer scale-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-amber-200 border-b-2 border-amber-200 pb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-2 text-[9px] bg-primary-container text-on-primary-container w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area (Background Context) -->
+<main class="pt-32 px-gutter max-w-container-max mx-auto opacity-40">
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 mb-16">
+<h1 class="font-display-xl text-display-xl text-on-surface mb-4">Curated Essences</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Return to our sanctuary of olfactory mastery. Your selections await their final journey from our atelier to your doorstep.</p>
+</div>
+<div class="col-span-6 h-[600px] bg-surface-container rounded-lg overflow-hidden relative border border-secondary/10">
+<img class="w-full h-full object-cover" data-alt="A macro photography shot of a heavy crystal perfume bottle filled with a rich amber liquid, resting on a dark obsidian slab. The lighting is low and dramatic, with warm champagne gold highlights catching the sharp edges of the glass. The atmosphere is mysterious and luxurious, evocative of a high-end private boutique at midnight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrdZSSmHTgsm4h0jjs6JGvi_3ZYbLO8zvssWz6ybvFIPBas7-7xXODX6c5YaWjJtnR0yzpbsV4-H2metveNBtLoWEhE7GNl2lmeaKZJDCMmVkjUH4GiCBVroueC5aprjnjBEq16C_dEaneqHC5U4NTQElGtjEEvhqOtEjIUl_MxDu9mxDnwew2yp5-MuBeICyYADxpfP4vDDRwORWJRnn8_JP4swmm3Apv1QuE_3a5hdhS8HwGTpXtMgWGKwTiq8a302NuypTPr5I"/>
+</div>
+<div class="col-span-6 h-[600px] bg-surface-container rounded-lg overflow-hidden relative border border-secondary/10">
+<img class="w-full h-full object-cover" data-alt="A collection of artisanal perfume vials arranged on a reflective black marble surface. Soft plumes of royal maroon smoke drift in the background, creating an ethereal and atmospheric setting. The scene is illuminated by soft, focused golden spotlights that emphasize the tactile textures of the labels and the liquid inside." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvd_f26vNictKt_igBRZ0A_vVuCM2jdlxqN8yYIZaShiUqVmjdMtj7yKUn7QEhtrnHKqxYWDBQl0ZhnXJkxVZYMR8qWZiLb_xkNPm0actPKlFoqXFy4AmrZ-RIW7GkEzmFONNuU9T236wVwdizhja_KZfPBvFxjm1naBHd2YeljX81Tvj90DjPyjuhMqypAXcSHyRg8Gyf3i3xVYloY46KXucJsnWSs3y47HL-VDJXzc2adWeTB5_0DeNhDUSekQrU9fgxrVljRY"/>
+</div>
+</section>
+</main>
+<!-- Shopping Bag Side Panel Overlay -->
+<aside class="fixed inset-y-0 right-0 w-full md:w-[500px] glass-panel z-[100] shadow-2xl flex flex-col">
+<!-- Panel Header -->
+<div class="p-glass-padding flex justify-between items-center border-b border-secondary/10">
+<h2 class="font-title-lg text-title-lg text-secondary tracking-widest uppercase">Your Selection</h2>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors" data-icon="close">close</button>
+</div>
+<!-- Bag Items (Scrollable) -->
+<div class="flex-grow overflow-y-auto custom-scrollbar p-glass-padding space-y-12">
+<!-- Item 1: Midnight Oud -->
+<div class="group flex gap-6">
+<div class="w-24 h-32 bg-surface-container-highest rounded border border-secondary/5 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sleek black perfume bottle for Midnight Oud, featuring a minimalist aesthetic with subtle gold lettering. The bottle is positioned against a dark, moody background with deep shadows and soft champagne light glints on its polished surface. The style is ultra-luxurious and nocturnal, emphasizing the exclusivity of the fragrance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRo0ijBdaeG8y7o6dEw0BEl39M6DbMb8upBzYi6jst4v93kcLboXUdMtcp8Y32k06tQ9-oatKpigzHGhHO8EthoGHFC5IirZzyrWlosM-0CfUtL6O1GDAlZgAKfe44qTpj9IoWjrIc-QH_3LXKCGCUO-dFzOen7ckL0z1EmzLEAzcr8-IFR3F-FJ2SwfZkol6ZNKLah1ECsZd_d2kT0YXhr8Dp_eeh2N-NQM0WTioY8Ca3sXCX0zP1BDPz0tVDTGB25xr_yD2hze8"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-title-lg text-body-lg text-on-surface">Midnight Oud</h3>
+<span class="font-label-caps text-label-caps text-secondary">$340.00</span>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mt-1">100ML | Eau de Parfum</p>
+<div class="flex gap-2 mt-3">
+<span class="px-2 py-0.5 bg-surface-container-low border border-primary-container/30 rounded-full text-[9px] font-label-caps text-on-surface-variant uppercase">Oud</span>
+<span class="px-2 py-0.5 bg-surface-container-low border border-primary-container/30 rounded-full text-[9px] font-label-caps text-on-surface-variant uppercase">Incense</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center border border-secondary/20 rounded-sm">
+<button class="px-3 py-1 text-on-surface-variant hover:text-secondary transition-colors">-</button>
+<span class="px-3 py-1 font-label-caps text-[11px] text-on-surface">01</span>
+<button class="px-3 py-1 text-on-surface-variant hover:text-secondary transition-colors">+</button>
+</div>
+<button class="font-label-caps text-[10px] text-on-surface-variant hover:text-error transition-colors uppercase">Remove</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Silk Veil -->
+<div class="group flex gap-6">
+<div class="w-24 h-32 bg-surface-container-highest rounded border border-secondary/5 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A frosted glass perfume bottle titled Silk Veil, reflecting soft, ethereal light against a dark background. The scene is filled with a sense of calm opulence, featuring subtle hints of silk fabric textures and champagne gold accents. The atmospheric lighting creates a dreamlike quality, highlighting the artisanal craft of the vessel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATT3EMiRzl3i_JeHZWE-eV8hOzq8VATkJUEg7JV0_v-fB1QxpNjJs4cpN77KVX67jkgLvaeWZWJhbENERGa-RZpZvlWgfBfPLh7hMhSF5mWm6-hZSwCKz-3c0MrWdpFx2hrvjvdFfyEHiE5PLTzVckgNCUfupFe8bN_7jj-0Ldv7ww1H_fKPBP8iE0E7q_JfAHo5MEe-StJVyPnMvDBYIYMU9-X40mDZSuKKiq-59EiyrvcbiA9i2V2e6nfyCxagmYolhN6Gqwl_U"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-title-lg text-body-lg text-on-surface">Silk Veil</h3>
+<span class="font-label-caps text-label-caps text-secondary">$290.00</span>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mt-1">50ML | Extrait de Parfum</p>
+<div class="flex gap-2 mt-3">
+<span class="px-2 py-0.5 bg-surface-container-low border border-primary-container/30 rounded-full text-[9px] font-label-caps text-on-surface-variant uppercase">Jasmine</span>
+<span class="px-2 py-0.5 bg-surface-container-low border border-primary-container/30 rounded-full text-[9px] font-label-caps text-on-surface-variant uppercase">Musk</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center border border-secondary/20 rounded-sm">
+<button class="px-3 py-1 text-on-surface-variant hover:text-secondary transition-colors">-</button>
+<span class="px-3 py-1 font-label-caps text-[11px] text-on-surface">01</span>
+<button class="px-3 py-1 text-on-surface-variant hover:text-secondary transition-colors">+</button>
+</div>
+<button class="font-label-caps text-[10px] text-on-surface-variant hover:text-error transition-colors uppercase">Remove</button>
+</div>
+</div>
+</div>
+<!-- Atelier Service Add-on -->
+<div class="p-6 bg-surface-container-low border border-secondary/5 rounded-lg">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="font-label-caps text-[11px] text-on-surface uppercase tracking-wider">Bespoke Engraving</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5 italic">Add a personal sigil to your Midnight Oud bottle.</p>
+</div>
+</div>
+<button class="w-full mt-4 border border-secondary/20 py-2 font-label-caps text-[10px] text-secondary hover:bg-secondary/10 transition-colors uppercase tracking-widest">
+                    Add for $45.00
+                </button>
+</div>
+</div>
+<!-- Checkout Section -->
+<div class="p-glass-padding bg-surface-container-high border-t border-secondary/10">
+<div class="space-y-3 mb-8">
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-label-caps text-[11px] uppercase tracking-wider">Subtotal</span>
+<span class="font-body-md text-sm">$630.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-label-caps text-[11px] uppercase tracking-wider">Shipping</span>
+<span class="font-body-md text-sm">Complimentary</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-label-caps text-[11px] uppercase tracking-wider">Estimated Tax</span>
+<span class="font-body-md text-sm">$50.40</span>
+</div>
+<div class="flex justify-between text-on-surface pt-4 border-t border-secondary/10">
+<span class="font-label-caps text-sm uppercase tracking-[0.2em] font-bold">Total</span>
+<span class="font-title-lg text-secondary">$680.40</span>
+</div>
+</div>
+<button class="w-full bg-primary-container hover:bg-on-primary text-secondary border border-secondary/30 py-6 font-label-caps text-[13px] tracking-[0.3em] uppercase transition-all duration-300 flex items-center justify-center gap-3 active:scale-95">
+                Proceed to Payment
+                <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-[10px] text-on-surface-variant/60 font-label-caps uppercase tracking-widest mt-6">
+                Insured Express Shipping Worldwide
+            </p>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="w-full border-t border-amber-200/10 bg-neutral-950">
+<div class="flex flex-col items-center justify-center py-20 px-8 gap-8">
+<div class="text-xl font-serif tracking-[0.2em] text-amber-200">Aetheris Luxe</div>
+<div class="flex gap-12">
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Shipping &amp; Returns</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-neutral-500 hover:text-amber-100 transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="font-serif uppercase tracking-widest text-[10px] text-amber-200/80">
+                © 2024 Aetheris Luxe. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>

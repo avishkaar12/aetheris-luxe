@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Aetheris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">Aetheris</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="product-detail.html">Signature</a>
+        <a href="bespoke.html">Bespoke</a>
+        <a href="profiles.html">Alchemy</a>
+      </nav>
+      <div class="header-tools">
+        <a class="icon-btn" href="login.html"><span class="material-symbols-outlined">person</span></a>
+        <a class="icon-btn" href="cart.html"><span class="material-symbols-outlined">shopping_bag</span><span class="cart-dot" data-cart-count style="display:none">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap section">
+    <section class="panel" style="padding:1.2rem; margin-bottom:1rem">
+      <p class="kicker">Secure Checkout</p>
+      <h1>Complete Your Order</h1>
+      <p class="lead">Your order is encrypted and protected end-to-end.</p>
+    </section>
+
+    <section class="split reveal">
+      <article class="panel" style="padding:1rem">
+        <form id="checkout-form" class="form-panel">
+          <h3>Shipping Details</h3>
+          <label>Full Name</label>
+          <input required type="text" placeholder="Alex Morgan" />
+          <label>Email</label>
+          <input required type="email" placeholder="alex@example.com" />
+          <label>Address</label>
+          <input required type="text" placeholder="221B Regent Street" />
+          <label>City</label>
+          <input required type="text" placeholder="London" />
+          <label>Postal Code</label>
+          <input required type="text" placeholder="W1B 5RA" />
+          <label>Payment Method</label>
+          <select>
+            <option>Credit Card</option>
+            <option>Apple Pay</option>
+            <option>PayPal</option>
+          </select>
+          <button class="btn btn-primary" type="submit" style="width:100%; margin-top:0.4rem">Place Order</button>
+        </form>
+      </article>
+
+      <aside class="panel" style="padding:1rem">
+        <div class="form-panel" style="margin-bottom:0.8rem">
+          <h3>Order Overview</h3>
+          <div id="checkout-items-preview" class="checkout-mini-list"></div>
+          <div class="totals">
+            <div class="row"><span class="muted">Subtotal</span><span id="checkout-subtotal">$0.00</span></div>
+            <div class="row"><span class="muted">Estimated Tax</span><span id="checkout-tax">$0.00</span></div>
+            <div class="row"><strong>Total</strong><strong id="checkout-total" class="price">$0.00</strong></div>
+          </div>
+        </div>
+        <article class="profile-image">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdt8RsYXFLR-tyzgTg2fqHHUzBwVqOB-MQB5wIFg7pLRubsJ8EJjlk-eS1ZAvcEx5yMsEMlcalxCSyMFjv1irdU1_ciFi0jvrRBlLIpHQBPt8nnZA8st1Jy2WeEpYyU7VzW4aePpSK95En9jeOc7-yu76PCUohbFjN0HPLc9I7nLbjWidz528kcDcsp2FXQMtEdeYjn3gBRVvgw9JrqPIBRjlODNLsNMXHkkJ6UpDjbJJrZesCsLplNzG0HCGU4Y4kCNr-m3kLUmE" alt="Secure luxury boutique interior" />
+        </article>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="row"><span>Need assistance? Concierge support available 24/7.</span><a href="cart.html">Back To Cart</a></div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="site-fixes.js"></script>
+</body>
+</html>
