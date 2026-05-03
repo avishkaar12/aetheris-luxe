@@ -145,66 +145,78 @@ def handler(event, context):
 
 ---
 
-## 10. Updated JavaScript Integration (`main.js`)
-Update your `main.js` to integrate with the Vercel serverless API instead of local storage. The API base URL will be your Vercel deployment URL.
+## 10. Updated JavaScript Integration (`main.js` & `cart.js`)
+Update your JavaScript files to integrate with the Vercel serverless API. The API base URL should be updated with your actual Vercel deployment URL.
 
+### Updated `main.js` with API Integration:
 ```javascript
-// API base URL - update with your Vercel deployment URL
-const API_BASE = 'https://your-vercel-app.vercel.app/api';
+class AetherisSite {
+  constructor() {
+    this.authKey = 'aetheris_auth';
+    this.selectedNotes = new Set();
+    // API base URL - update with your Vercel deployment URL
+    this.API_BASE = 'https://your-vercel-app.vercel.app/api';
+    this.bind();
+  }
 
-// Authentication functions
-async function register(username, password) {
-    const response = await fetch(`${API_BASE}/auth/register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+  // API Methods
+  async apiRegister(username, password) {
+    const response = await fetch(`${this.API_BASE}/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
     });
-    return response.json();
-}
+    return await response.json();
+  }
 
-async function login(username, password) {
-    const response = await fetch(`${API_BASE}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+  async apiLogin(username, password) {
+    const response = await fetch(`${this.API_BASE}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
     });
-    return response.json();
-}
+    return await response.json();
+  }
 
-// Product functions
-async function fetchProducts(category = null) {
-    const url = category ? `${API_BASE}/products?category=${category}` : `${API_BASE}/products`;
-    const response = await fetch(url);
-    return response.json();
+  // ... existing code with API integration in bindLogin, bindAddToCart, bindCheckoutForm
 }
+```
 
-// Cart functions
-async function getCart() {
-    const response = await fetch(`${API_BASE}/cart`);
-    return response.json();
-}
+### Updated `cart.js` with API Sync:
+```javascript
+class AetherisCartSystem {
+  constructor() {
+    this.storageKey = 'aetheris_cart';
+    this.lastOrderKey = 'aetheris_last_order';
+    this.API_BASE = 'https://your-vercel-app.vercel.app/api';
+    this.cart = this.loadCart();
+    this.bind();
+  }
 
-async function addToCart(productId, quantity = 1) {
-    const response = await fetch(`${API_BASE}/cart`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ product_id: productId, quantity })
+  // API Methods
+  async apiGetCart() {
+    const response = await fetch(`${this.API_BASE}/cart`);
+    const data = await response.json();
+    return data.items || [];
+  }
+
+  async apiAddToCart(productId, quantity = 1) {
+    const response = await fetch(`${this.API_BASE}/cart`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ product_id: productId, quantity })
     });
-    return response.json();
-}
+    return await response.json();
+  }
 
-// Checkout function
-async function checkout(orderData) {
-    const response = await fetch(`${API_BASE}/checkout`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderData)
-    });
-    return response.json();
-}
+  addToCart(product) {
+    // ... existing local cart logic
+    // Sync with API
+    this.apiAddToCart(product.id, 1);
+  }
 
-// Update existing cart.js and other JS files to use these API functions
-// instead of local storage operations
+  // ... rest of existing cart functionality
+}
 ```
 
 ---
