@@ -40,10 +40,11 @@ Aetheris Luxe is a premium e-commerce website for an exclusive perfume boutique,
 ### **Tech Stack**
 ```
 Frontend:    HTML5, CSS3, JavaScript (ES6+)
+Backend:     Python (Vercel Serverless Functions)
 Styling:     Tailwind CSS + Custom Glassmorphic Effects
 Fonts:       Google Fonts (Noto Serif, Material Symbols)
 Icons:       Material Symbols Outlined
-Deployment:  Vercel (Static Site Hosting)
+Deployment:  Vercel (Full-stack via GitHub)
 ```
 
 ### **Project Structure**
@@ -89,6 +90,8 @@ aetheris-luxe/
 - Modern web browser
 - Git for version control
 - Vercel account (for deployment)
+- Python 3.8+ (for backend)
+- pip (Python package manager)
 
 ### **Local Development**
 ```bash
@@ -96,9 +99,42 @@ aetheris-luxe/
 git clone https://github.com/avishkaar12/aetheris-luxe.git
 cd aetheris-luxe
 
-# Open in browser (since it's static HTML)
+# Frontend: Open in browser (static HTML)
 # Simply open index.html in your browser or use a local server
+
+# Backend: Vercel serverless functions (api/ directory)
+# These deploy automatically with Vercel
 ```
+
+### **Deployment to Vercel**
+```bash
+# Push to GitHub (if not already)
+git add .
+git commit -m "Add Python serverless backend for Vercel"
+git push origin main
+
+# Vercel will automatically detect and deploy:
+# - Static frontend files
+# - Python serverless functions in api/ directory
+# - API endpoints available at https://your-app.vercel.app/api/*
+
+# API Endpoints:
+# POST /api/auth/register - User registration
+# POST /api/auth/login - User login  
+# GET /api/products - Get products (optional ?category=oud)
+# GET /api/cart - Get cart (mock data)
+# POST /api/cart - Add to cart
+# POST /api/checkout - Process order
+
+# Update your JavaScript API_BASE to your Vercel URL
+const API_BASE = 'https://your-vercel-app.vercel.app/api';
+```
+
+### **Production Considerations**
+- **Database**: Replace mock data with a database (Vercel supports PostgreSQL, MongoDB, etc.)
+- **Authentication**: Implement proper JWT tokens or sessions
+- **Payment**: Integrate Stripe, PayPal, or other payment gateways
+- **Security**: Add input validation, rate limiting, and HTTPS enforcement
 
 ### **Deployment to Vercel**
 ```bash
