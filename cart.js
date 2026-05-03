@@ -2,8 +2,48 @@
   constructor() {
     this.storageKey = 'aetheris_cart';
     this.lastOrderKey = 'aetheris_last_order';
+    this.API_BASE = 'https://your-vercel-app.vercel.app/api';
     this.cart = this.loadCart();
     this.bind();
+  }
+
+  // API Methods
+  async apiGetCart() {
+    try {
+      const response = await fetch(`${this.API_BASE}/cart`);
+      const data = await response.json();
+      return data.items || [];
+    } catch (error) {
+      console.error('Cart fetch error:', error);
+      return [];
+    }
+  }
+
+  async apiAddToCart(productId, quantity = 1) {
+    try {
+      const response = await fetch(`${this.API_BASE}/cart`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ product_id: productId, quantity })
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Add to cart error:', error);
+      return { error: 'Network error' };
+    }
+  }
+
+  async syncCartWithAPI() {
+    try {
+      const apiCart = await this.apiGetCart();
+      // Merge API cart with local cart
+      // For now, we'll keep local cart as primary and sync to API
+      for (const item of this.cart) {
+        await this.apiAddToCart(item.id, item.quantity);
+      }
+    } catch (error) {
+      console.error('Cart sync error:', error);
+    }
   }
 
   loadCart() {
@@ -29,6 +69,8 @@
       this.cart.push({ ...product, quantity: 1 });
     }
     this.saveCart();
+    // Sync with API
+    this.apiAddToCart(product.id, 1);
     this.toast(`${product.name} added to your cart`);
   }
 
@@ -155,6 +197,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       this.updateBadges();
       this.renderCartPage();
+      // Sync cart with API on page load
+      this.syncCartWithAPI();
 
       document.body.addEventListener('click', (event) => {
         const target = event.target.closest('[data-action]');

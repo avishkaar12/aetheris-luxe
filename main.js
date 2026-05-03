@@ -2,7 +2,87 @@
   constructor() {
     this.authKey = 'aetheris_auth';
     this.selectedNotes = new Set();
+    // API base URL - update with your Vercel deployment URL
+    this.API_BASE = 'https://your-vercel-app.vercel.app/api';
     this.bind();
+  }
+
+  // API Methods
+  async apiRegister(username, password) {
+    try {
+      const response = await fetch(`${this.API_BASE}/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Registration error:', error);
+      return { error: 'Network error' };
+    }
+  }
+
+  async apiLogin(username, password) {
+    try {
+      const response = await fetch(`${this.API_BASE}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Login error:', error);
+      return { error: 'Network error' };
+    }
+  }
+
+  async apiGetProducts(category = null) {
+    try {
+      const url = category ? `${this.API_BASE}/products?category=${category}` : `${this.API_BASE}/products`;
+      const response = await fetch(url);
+      return await response.json();
+    } catch (error) {
+      console.error('Products fetch error:', error);
+      return [];
+    }
+  }
+
+  async apiGetCart() {
+    try {
+      const response = await fetch(`${this.API_BASE}/cart`);
+      return await response.json();
+    } catch (error) {
+      console.error('Cart fetch error:', error);
+      return { items: [], total: 0 };
+    }
+  }
+
+  async apiAddToCart(productId, quantity = 1) {
+    try {
+      const response = await fetch(`${this.API_BASE}/cart`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ product_id: productId, quantity })
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Add to cart error:', error);
+      return { error: 'Network error' };
+    }
+  }
+
+  async apiCheckout(orderData) {
+    try {
+      const response = await fetch(`${this.API_BASE}/checkout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData)
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Checkout error:', error);
+      return { error: 'Network error' };
+    }
   }
 
   currentUser() {
@@ -50,7 +130,7 @@
   bindLogin() {
     const form = document.getElementById('login-form');
     if (!form) return;
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const email = form.querySelector('input[type="email"]')?.value.trim();
       const password = form.querySelector('input[type="password"]')?.value.trim();
@@ -58,9 +138,25 @@
         window.AetherisCart?.toast('Please enter email and password');
         return;
       }
+
+      // Try login first
+      const loginResult = await this.apiLogin(email, password);
+      if (loginResult.error) {
+        // If login fails, try registration
+        const registerResult = await this.apiRegister(email, password);
+        if (registerResult.error) {
+          window.AetherisCart?.toast('Authentication failed: ' + registerResult.error);
+          return;
+        }
+        window.AetherisCart?.toast('Account created and logged in');
+      } else {
+        window.AetherisCart?.toast('Welcome back to Aetheris');
+      }
+
+      // Store user locally for UI purposes
       this.setUser(email);
       this.updateUserUI();
-      window.AetherisCart?.toast('Welcome to Aetheris');
+
       setTimeout(() => {
         window.location.href = 'index.html';
       }, 700);
@@ -84,7 +180,7 @@
 
   bindAddToCart() {
     document.querySelectorAll('[data-add-to-cart]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         const id = btn.dataset.id;
         const name = btn.dataset.name;
         const price = Number(btn.dataset.price || 0);
@@ -92,7 +188,17 @@
         const type = btn.dataset.type || 'Extrait de Parfum';
         const image = btn.dataset.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuAx-uvKRTRrMJyLbVlLT4ZO5aK9lfF4VVQrbQ9-iZPD8Dji7pBht_bx4RjlnUMdQSEQTeeyDRv7B3JeuP3a8yOUdy5FUSFbaNux_j_Qes-RlGXnebW6wyhL4F_1FcqS_DYUQeUEeawDEru2cCfjAM5DD9HDK1dXHU5j8y8HW8pZBGZNR9oUjiOk6wxX38CLK_6ev9slssQc3dsKUEcezaYGb5chQV39VxEFYbKQdZFWQQJXsgCVbOzx0lvnwucUYq_vNwWJZDt8Weo';
         if (!id || !name || !price) return;
+
+        // Add to API cart
+        const result = await this.apiAddToCart(id, 1);
+        if (result.error) {
+          window.AetherisCart?.toast('Failed to add to cart: ' + result.error);
+          return;
+        }
+
+        // Also add to local cart for UI purposes
         window.AetherisCart?.addToCart({ id, name, price, size, type, image });
+        window.AetherisCart?.toast('Added to cart');
       });
     });
   }
@@ -151,19 +257,39 @@
   bindCheckoutForm() {
     const form = document.getElementById('checkout-form');
     if (!form) return;
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!window.AetherisCart || !window.AetherisCart.cart || window.AetherisCart.cart.length === 0) {
         window.AetherisCart?.toast('Your cart is empty');
         window.location.href = 'collections.html';
         return;
       }
+
+      // Process checkout via API
+      const orderData = {
+        items: window.AetherisCart.cart,
+        shipping: {
+          name: form.querySelector('[name="name"]')?.value,
+          email: form.querySelector('[name="email"]')?.value,
+          address: form.querySelector('[name="address"]')?.value,
+          city: form.querySelector('[name="city"]')?.value,
+          zip: form.querySelector('[name="zip"]')?.value
+        }
+      };
+
+      const result = await this.apiCheckout(orderData);
+      if (result.error) {
+        window.AetherisCart?.toast('Checkout failed: ' + result.error);
+        return;
+      }
+
       const totals = window.AetherisCart.totals();
       const itemCount = window.AetherisCart.cart.reduce((sum, item) => sum + item.quantity, 0);
       const dispatchDate = new Date();
       dispatchDate.setDate(dispatchDate.getDate() + 2);
+
       window.AetherisCart?.setLastOrder({
-        id: `ATH-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`,
+        id: result.order_id || `ATH-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`,
         total: totals.total,
         items: itemCount,
         dispatchDate: dispatchDate.toLocaleDateString(),
