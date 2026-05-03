@@ -3,7 +3,7 @@
     this.authKey = 'aetheris_auth';
     this.selectedNotes = new Set();
     // API base URL - update with your Vercel deployment URL
-    this.API_BASE = 'https://your-vercel-app.vercel.app/api';
+    this.API_BASE = 'https://aetheris-luxe.vercel.app/api';
     this.bind();
   }
 

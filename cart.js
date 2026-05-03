@@ -2,7 +2,7 @@
   constructor() {
     this.storageKey = 'aetheris_cart';
     this.lastOrderKey = 'aetheris_last_order';
-    this.API_BASE = 'https://your-vercel-app.vercel.app/api';
+    this.API_BASE = 'https://aetheris-luxe.vercel.app/api';
     this.cart = this.loadCart();
     this.bind();
   }
